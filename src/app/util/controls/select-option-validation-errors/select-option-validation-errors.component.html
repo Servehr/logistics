@@ -1,0 +1,10 @@
+<ng-container
+   *ngIf="control?.touched === true && control?.value != -1"
+>
+  <ul
+     class="text-red-400 font-bold text-sm mt-2 ml-1"
+  >
+     {{ errorMessages[control?.errors?.selectionRequired]}}
+     
+ </ul>
+</ng-container>

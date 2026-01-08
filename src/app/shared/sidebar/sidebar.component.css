@@ -1,0 +1,9 @@
+.active-link {
+    /* background-color: #8e1212; */
+    background-color: #380061;
+    font-weight: bold;
+}
+
+.indicate {
+    background-color: #cadae9;
+}

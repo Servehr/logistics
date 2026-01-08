@@ -1,0 +1,31 @@
+<textarea
+    [id]="id"
+    [name]="name"
+    message="message"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (input)="onInput($event)"
+    (blur)="_onTouched()"
+    [rows]="rows"
+
+
+    class="border-2 border-solid rounded py-2 px-3 rounded-lg placeholder-gray-500 placeholder-opacity-100 w-full focus:border-indigo-300 input transition-colors transtion"
+>    
+</textarea>
+
+
+{{ control }}
+
+<text-area-validation-errors
+   [customErrorMessages]="customError" 
+   [errors]="control?.errors"
+>
+</text-area-validation-errors>
+
+<!-- class="p-4 border-2 border-gray-200 shadow-md bg-white text-black rounded-lg w-full" -->
+
+<!-- <textarea 
+        class="border-2 border-solid rounded py-2 px-1 placeholder-gray-500 placeholder-opacity-100 w-full focus:border-indigo-300 input transition-colors transtion"
+    >
+    
+</textarea> -->

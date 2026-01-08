@@ -1,0 +1,138 @@
+<div 
+   class="w-full h-screen md:flex flex-cols p-5 bg-red-100"
+> 
+   <div 
+     class="w-12/12 md:w-8/12 "
+   >
+    
+   </div>
+   <div 
+     class="w-12/12 md:w-4/12 justify-center items-center pt-10"
+   >
+     <div
+       class="px-5 py-6 pb-10 text-white w-full flex-shrink-0 flex flex-col items-center justify-center mx-auto md:W-fit"
+    >
+      <div 
+        class="flex my-3 py-2 text-4xl font-bold tracking-wider justify-center items-center"
+      >
+        <img 
+          src="../assets/RachamHub Logistics.png" 
+          class="" alt="logo" height="100" width="100" />
+      </div>
+    </div>
+        <div 
+          class="grid grid-cols-2 gap-5 mb-5"
+        >          
+          <div 
+              class="flex flex-col space-y-1"
+          >
+             <input-field
+                [id]="'firstname'"
+                [name]="'firstname'"
+                [placeholder]="'Enter fisrt name'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+          <div 
+              class="flex flex-col space-y-1"
+          >
+              <input-field
+                [id]="'surname'"
+                [name]="'surname'"
+                [placeholder]="'Enter surname'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+        </div>
+
+        <div 
+          class="grid grid-cols-2 gap-5 mb-5"
+        >   
+          <div 
+              class="flex flex-col space-y-1"
+          >
+              <input-field
+                [id]="'phone'"
+                [name]="'phone'"
+                [placeholder]="'Give your phone number'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+          <div 
+              class="flex flex-col space-y-1"
+          >
+              <input-field
+                [id]="'email'"
+                [name]="'email'"
+                [placeholder]="'Enter a valid email'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+        </div>
+
+        <div 
+          class="grid grid-cols-2 gap-5 mb-5"
+        >     
+          <div 
+              class="flex flex-col space-y-1"
+          >
+              <input-field
+                [id]="'id'"
+                [name]="'name'"
+                [placeholder]="'Enter password'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+          <div 
+              class="flex flex-col space-y-1"
+          >
+              <input-field
+                [id]="'id'"
+                [name]="'name'"
+                [placeholder]="'Re-type password'"
+                [type]="type"
+                [value]="value"
+             >
+            </input-field>
+          </div>
+        </div>
+
+        <div 
+          class="grid grid-cols-1 mb-5"
+        >          
+          <div 
+              class="flex flex-col space-y-1 w-fit"
+          >
+             <ng-container 
+                *ngIf="!showLoading"
+             >
+                <buttonn 
+                    (click)="signup()"
+                >
+                  <h3>Submit</h3>
+                </buttonn> 
+            </ng-container>
+            
+             <ng-container 
+                *ngIf="showLoading"
+             >
+                <app-spinner 
+                    *ngIf="showLoading"
+                >
+              </app-spinner>              
+            </ng-container>
+
+          </div>
+        </div>     
+   </div>
+</div>

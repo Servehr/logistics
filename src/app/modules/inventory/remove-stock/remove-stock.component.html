@@ -1,0 +1,41 @@
+<app-dialog 
+    *ngIf="ModalState === 'remove-stock'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-full md:w-4/12 -mt-60'"
+>
+   <div
+      class="header w-full flex justify-center text-center mb-10"
+      select="header"
+   >
+      Product A will be deleted
+   </div>
+
+   <div 
+     class="footer flex w-full gap-6 px-3 justify-center mb-10" 
+     select="footer"
+   >
+      <div 
+        class=""
+       >
+         <buttonn 
+           (click)="sendData()" 
+           [type]="'bg-black border-0 py-3 w-32 text-sm whitespace-nowrap flex-shrink hover:bg-black-800 hover:text-white text-gray-300 font-semibold px-2 border border-black-600 rounded-lg shadow'"
+         >
+           Cancel
+          </buttonn>
+       </div> 
+       <div 
+         class=""
+       >
+         <buttonn
+            (click)="sendData()"
+            [type]="'bg-red-500 py-3 w-32 text-sm whitespace-nowrap flex-shrink hover:bg-red-800 hover:text-white text-gray-300 font-semibold px-2 border border-red-600 rounded-lg shadow'"
+         >
+           Delete
+         </buttonn>
+      </div>                
+    </div>
+        
+</app-dialog>

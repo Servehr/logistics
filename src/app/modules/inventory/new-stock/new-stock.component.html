@@ -1,0 +1,159 @@
+<app-dialog 
+    *ngIf="ModalState === 'new-stock'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-full md:w-5/12 -mt-30 md:-mt-20'"
+>
+    <div 
+        class="content overflow-x-auto min-h-fit max-h-[700px] pb-8 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+       <form 
+        [formGroup]="newStock"
+        class="flex flex-col space-y-5"
+      >
+         <div 
+            class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+         >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Merchant'"></app-label>
+                    <input-field
+                        [id]="'merchantName'"
+                        #merchantName
+                        [name]="'merchantName'"
+                        [placeholder]="'Enter merchantName'"
+                        [type]="'text'"
+                        [value]="''"
+                        formControlName="merchantName"
+                        [customErrorMessages]="errorMessages"
+                    >
+                    </input-field>
+                    <!-- <app-input-box [type]="'text'" [name]="'merchant'" [value]="''" [id]="'firstname'" [placeholder]="'Enter Merchant Name'"></app-input-box> -->
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Product Name'"></app-label>
+                    <input-field
+                        [id]="'productName'"
+                        #productName
+                        [name]="'productName'"
+                        [placeholder]="'Enter productName'"
+                        [type]="'text'"
+                        [value]="''"
+                        formControlName="productName"
+                        [customErrorMessages]="errorMessages"
+                    >
+                    </input-field>
+                    <!-- <app-input-box [type]="'text'" [name]="'productName'" [value]="''" [id]="'productName'" [placeholder]="'Enter Product Name'"></app-input-box> -->
+                </div>
+            </div>
+            <div 
+                class="md:flex mb-3"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Amount'"></app-label>
+                    <input-field
+                        [id]="'amount'"
+                        #amount
+                        [name]="'amount'"
+                        [placeholder]="'Enter amount'"
+                        [type]="'number'"
+                        [value]="''"
+                        formControlName="amount"
+                        [customErrorMessages]="errorMessages"
+                    >
+                    </input-field>
+                    <!-- <app-input-box [type]="'number'" [name]="'amount'" [value]="''" [id]="'amount'"></app-input-box> -->
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Re-Order Limit'"></app-label>
+                    <input-field
+                        [id]="'reOrderLimit'"
+                        #reOrderLimit
+                        [name]="'reOrderLimit'"
+                        [placeholder]="'Enter reOrderLimit'"
+                        [type]="'number'"
+                        [value]="''"
+                        formControlName="reOrderLimit"
+                        [customErrorMessages]="errorMessages"
+                    >
+                    </input-field>
+                    <!-- <app-input-box [type]="'number'" [name]="'reOrderLimit'" [value]="''" [id]="'reOrderLimit'"></app-input-box> -->
+                </div>
+            </div>
+        </div>
+        <div 
+            class="w-full flex justify-center items-center text-center mb-5"
+        >
+            <div 
+                class="px-3"
+            >
+                <app-label [for]="'Product Image'"></app-label>
+                <div 
+                    class="w-96 h-[160px] p-3 bg-blue-100 mb-3"
+                >
+
+                </div>   
+
+                <input-field
+                  [id]="'productImage'"
+                  #productImage
+                  [name]="'productImage'"
+                  [placeholder]="'Select Image'"
+                  [type]="'file'"
+                  [value]="''"
+                  formControlName="productImage"
+                  [customErrorMessages]="errorMessages"
+                >
+                </input-field>                                 
+                <!-- <app-input-box [type]="'file'" [name]="'productImage'" [value]="''" [id]="'productImage'" [placeholder]="'Select Image'"></app-input-box> -->
+            </div>
+        </div>
+
+        <div 
+            class="footer" 
+            style="margin: 15px 0px 5px 0px;"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 px-5 mt-5" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                    >
+                        Cancel
+                    </button>
+                </div> 
+                <div 
+                    class="flex col-span-6 justify-end"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                    >
+                        Submit Order
+                    </button>
+                </div>                
+            </div>
+        </div>
+       </form>
+    </div>
+</app-dialog>

@@ -1,0 +1,41 @@
+<!-- <div
+    class="relative mb-2 flex items-center after:w-[8px] after:h-[8px]
+           after:border-black/70 after:border-b after:border-r after:transform after:rotate-45 after:absolute after:right-3"
+>
+    <select 
+        required 
+        [value]="options"
+        [name]="name"
+        (change)="optionChange($event)"
+        class="text-black bg-white px-3 py-4 transition-all cursor-pointer hover:border-blue-600/30 border border-gray-200 rounded-lg outline-blue-600/50 appearance-none invalid:text-black/30 w-full"
+    >
+        <option 
+            *ngFor="let option of options" 
+            value="{{option.id}}" 
+            class="p-5 text-black"
+        >
+           {{option.value}}
+        </option>
+    </select>
+    <div   
+        *ngIf="message" 
+        class="mt-20 absolute"
+    >
+        <h4 
+            class="font-bold text-red-600"
+        >
+            {{message}}
+        </h4>
+    </div>
+</div> -->
+
+<!-- <div class="relative border border-gray-300 text-gray-800 bg-white shadow-lg">
+    <select class="appearance-none w-full py-1 px-2 py-4 bg-white" [name]="name" id="frm-whatever">
+        <option *ngFor="let option of options" value="{{option.key}}" class="p-5">{{option.value}}</option>
+    </select>
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+        </svg>
+    </div>
+</div> -->

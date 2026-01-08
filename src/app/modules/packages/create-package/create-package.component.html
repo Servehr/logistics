@@ -1,0 +1,214 @@
+<app-dialog 
+    *ngIf="ModalState === 'create-package'"
+    [title]="title"
+    [wideTall]="'w-full md:w-6/12 -mt-[10px]'"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+>
+    <div 
+        class="overflow-x-auto h-[800px] w-full scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+        <div 
+            class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+        >
+            <div 
+                [formGroup]="form"
+            >
+                <div 
+                    formArrayName="orderControls"
+                >
+                    <div 
+                        *ngFor="let x of orderControls.controls; let currentControl = index;" 
+                        [formGroupName]="currentControl"
+                    >
+                        <div 
+                            class="w-full flex gap-6 px-3"
+                        >
+                            <div 
+                                class="w-5/12"
+                            >
+                               <app-label [for]="'Product Name'"></app-label>
+                               <app-input-box [type]="'text'" [name]="'merchant'" [value]="''" [id]="'merchant'" [placeholder]="'Enter Product Name'"></app-input-box>                             
+                            </div>
+                            <div 
+                                class="w-5/12"
+                            >
+                                <app-label [for]="'Product Quantity'"></app-label>
+                                <div 
+                                  class="relative flex items-center"
+                                >
+                                  <input 
+                                    id="8" 
+                                    #productQuantity
+                                    type="number"
+                                    (keyup)="setCurrentControlIndex(currentControl, 8)"
+                                    class="block w-full rounded-md border-0 pl-5 pr-5 text-gray-900 ring-1 ring-inset 
+                                    ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
+                                    focus:ring-slate-200 sm:text-s py-4" 
+                                  />
+                                  <button 
+                                    class="absolute right-0 h-full w-10 rounded-r-md bg-orange-400" 
+                                    [ngClass]="reLimitOrderIndicator"
+                                  >
+                                  </button>
+                                </div>
+                            </div>
+                            <div 
+                                class="w-2/12 md:w-1/12 p-3 text-sm justify-center items-center"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" class="text-red-300 text-sm md:text-sm hover:fill-red hover:text-red py-1 text-[1px] mt-3 flex justify-center items-center cursor-pointer" (click)="removeOrderControl(currentControl)">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div 
+                class="w-full flex justify-center items-center mt-4 mb-10"
+            >                   
+                <button 
+                    (click)="addOrderControl()" 
+                    class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                >
+                    +
+                </button>
+            </div>
+        </div>
+
+        <div 
+            class="content overflow-auto h-[250px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 w-full border border-purple-600"
+        >
+            <app-table [Header]="Header[0].product" [TableType]="'products'" [RowAndColumn]="RowAndColumn[0]['products']" [Action]="Action" [ViewAction]="ViewAction" [ActionName]="ActionName" [SubViewAction]="SubViewAction"></app-table>
+        </div> 
+        
+        
+        <div 
+            class="md:flex mt-5"
+        >
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Discount (Preferred Total)'"></app-label>
+                <app-input-box [type]="'text'" [name]="'discount'" [value]="''" [id]="'discount'" [placeholder]="'Discout'"></app-input-box>
+            </div>
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Total'"></app-label>
+                <app-input-box [type]="'text'" [name]="'total'" [value]="''" [id]="'total'" [placeholder]="'Total'"></app-input-box>
+            </div>
+        </div>
+
+        <div    
+            class="flex w-full"
+        >
+            <span 
+                class="font-bold header p-3 bg-blue-100 w-full mt-3 mb-5"
+            >
+                Add Customer Detail
+            </span>
+        </div>
+
+        <div 
+            class="w-full"
+        >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Firstname'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'firstname'" [value]="firstName" [id]="'firstname'" [placeholder]="'Enter Firstname'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Surname'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'surname'" [value]="surName" [id]="'surname'" [placeholder]="'Enter Surname'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Phone Number'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'phone'" [value]="phoneNumber" [id]="'phone'" [placeholder]="'Enter Phone Number'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Alternate Phone Number'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'phone-2'" [value]="phoneNumber" [id]="'phone-2'" [placeholder]="'Enter Alternate Phone Number'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >            
+                <div 
+                    class="w-full mx-3 mb-6 md:mb-5"
+                >
+                    <app-label [for]="'State'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'state'" [value]="''" [id]="'state'" [placeholder]="'e.g Lagos'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >            
+                <div 
+                    class="w-full mx-3 mb-6 md:mb-5"
+                >
+                    <app-label [for]="'Address'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'address'" [value]="''" [id]="'address'" [placeholder]="'Olusoji Idowu, Obanikoro'"></app-input-box>
+                </div>
+            </div>
+        </div>
+
+        <div 
+            class="md:flex mt-2 mb-3"
+        >
+            <div 
+                class="w-full px-1 mb-3"
+            >
+                <app-label [for]="'Total Order'"></app-label>
+                <app-input-box [type]="'text'" [name]="'totalOrder'" [value]="''" [id]="'totalOrder'" [placeholder]="'Total Order'"></app-input-box>
+            </div>
+        </div>
+
+        <div 
+            class="footer" 
+            style="margin: 20px 0px 25px 0px;"
+        >
+            <div 
+                class="flex gap-6 px-3 justify-between" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-2"
+                >                  
+                  <buttonn 
+                    (click)="sendData()" 
+                    [type]="'bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow'"
+                  >
+                    Cancel
+                  </buttonn>
+                </div> 
+                <div 
+                    class="flex col-span-3 justify-end"
+                >                
+                  <buttonn 
+                    (click)="sendData()" 
+                    [type]="'bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow'"
+                  >
+                    Submit Order
+                  </buttonn>
+                </div>                
+            </div>
+        </div>
+        
+    </div>
+</app-dialog>

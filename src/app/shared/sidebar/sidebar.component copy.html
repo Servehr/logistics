@@ -1,0 +1,52 @@
+<div 
+    class="px-5 py-5 flex bg-white justify-center items-center -ml-1"
+>    
+    <logo />
+</div>
+
+<app-placard></app-placard>
+
+<div 
+    class="-mt-2 static"
+>
+    <ul 
+        class="w-full mt-2" id="aside"
+    >
+        <li 
+            class="border-b-2 shadow-md border-red-500 py-1" 
+            *ngFor="let menu of pages; index as i"
+        >
+            <a 
+               [routerLink]="menu?.route" 
+               routerLinkActive="active-link" 
+               class="w-5/5 relative justify-center items-end flex p-3 text-sm hover:text-white hover:font-bold pl-5 text-white hover:bg-red-700"
+            >                        
+                <span class="w-4/5">{{ menu?.name }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="h-4 -mt-3 w-1/5 -ml-16" [ngClass]="!menu?.subMenu ? 'hidden' : ''">
+                    <path fillRule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clipRule="evenodd" />
+                </svg>                   
+            </a>  
+            <!-- <ng-container> -->
+            <ul 
+               id='dropdown-management subMenuList' 
+               [class.hidden]="!menu?.hasSubMenu" 
+            >
+                <li 
+                    class="hover:border-r-4 hover:r-pink-700 duration-300 pl-14 py-2 hover:border-t-2 hover:broder-gray-200 cursor-pointer hover:font-bold hover:bg-[#380061] hover:text-white"
+                    *ngFor="let subMenu of menu?.subMenu"
+                >
+                    <a [routerLink]="subMenu?.route" class="text-sm">{{ subMenu?.name }}</a>
+                </li>
+            </ul>
+            <!-- </ng-container> -->
+        </li>
+    </ul>
+</div>
+<div 
+    class="h-10 bottomAside text-white"
+>
+   <span 
+      class="text-gray-400 text-xs font-bold uppercase text-center mt-2"
+    >
+    </span>
+</div>

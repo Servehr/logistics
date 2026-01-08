@@ -1,0 +1,81 @@
+<!-- <div class="sm:w-full p-5 md:p-0 mt-5 md:mt-0"> -->
+    <div 
+        class="w-full h-screen md:flex md:items-center md:justify-center p-5 md:p-0 md:mt-0 md:bg-gray bg-red-100 relative"
+    >
+        <div
+          class="flex flex-col overflow-hidden bg-blue-500 md:bg-white md:rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md -mt-0 md:-mt-40"
+        >
+          <div
+            class="px-20 py-20 pb-10 text-white bg-red-200 md:w-80 w-full flex-shrink-0 flex flex-col items-center justify-center md:W-full"
+          >
+            <div class="flex my-3 py-10 text-4xl font-bold tracking-wider justify-center items-center">
+                <img src="../assets/RachamHub Logistics.png" class="-mt-20" alt="logo" height="100" width="100" />
+            </div>
+          </div>
+          <div 
+             class="py-5 px-10 pb-10 md:bg-white md:flex-1 bg-blue-50"
+          >
+            <div *ngIf="message">
+              <app-alert [status]="status" [id]="message" [colorStatus]="colorStatus"></app-alert>
+            </div>
+
+            <h5 
+              class="my-4 text-sm font-bold text-blue-400 mb-5 text-center md:text-left text-CompanyBlue" style="color : #380061"
+            >
+              Forgot Password
+            </h5>
+
+            <form 
+              [formGroup]="forgetForm"
+              action="#" 
+              class="flex flex-col space-y-5"
+            >
+              <div 
+                class="flex flex-col space-y-1"
+              >
+                
+                <input-field
+                    [id]="'email'"
+                    #email
+                    [name]="'email'"
+                    [placeholder]="'Enter email'"
+                    [type]="'email'"
+                    [value]="value"
+                    formControlName="email"
+                    [customErrorMessages]="errorMessages"
+                >
+                </input-field>
+              </div>
+              <div>
+                <button
+                  (click)="forgot()"
+                  class="w-full px-4 pt-5 pb-5 text-lg font-semibold text-white transition-colors duration-300 hover:text-red-200
+                        bg-CompanyBlue rounded-md shadow hover:bg-red-600 hover:border-3 hover:border-white-400 focus:outline-red focus:ring-blue-200 focus:ring-4"
+                >
+                    <app-spinner *ngIf="showLoading"></app-spinner>
+                    <div 
+                      class="flex flex-col space-y-1 items-center justify-between" 
+                      *ngIf="!showLoading"
+                    >
+                      <h3>Submit</h3>
+                    </div>
+                </button>
+              </div>
+              <div 
+                class="flex flex-col space-x-2 justify-content-between"
+              >
+                <div 
+                  class="flex justify-between"
+                >
+                  <a 
+                    [routerLink]="'/login'"
+                    class="text-sm text-blue-900 hover:underline focus:text-blue-800 -mt-2 mb-3"
+                  >
+                    Login
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>

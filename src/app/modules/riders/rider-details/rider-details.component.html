@@ -1,0 +1,104 @@
+<app-dialog 
+    *ngIf="ModalState === 'rider-detail'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-full md:w-5/12 -mt-30 md:-mt-20'"
+>
+    <div 
+        class="content overflow-x-auto min-h-[500px] max-h-[700px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Firstname'"></app-label>
+                <app-input-box [type]="'text'" [name]="'firstname'" [value]="''" [id]="'firstname'" [disabled]="true"></app-input-box>
+            </div>
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Surname'"></app-label>
+                <app-input-box [type]="'text'" [name]="'surname'" [value]="''" [id]="'surname'" [disabled]="true"></app-input-box>
+            </div>
+        </div>
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Date of Birth'"></app-label>
+                <app-input-box [type]="'text'" [name]="'dob'" [value]="''" [id]="'dob'" [disabled]="true"></app-input-box>
+            </div>
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Phone Number'"></app-label>
+                <app-input-box [type]="'text'" [name]="'phone'" [value]="''" [id]="'phone'" [disabled]="true"></app-input-box>
+            </div>
+        </div>
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Email'"></app-label>
+                <app-input-box [type]="'text'" [name]="'email'" [value]="''" [id]="'email'" [disabled]="true"></app-input-box>
+            </div>
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Gender'"></app-label> 
+                <app-input-box [type]="'text'" [name]="'gender'" [value]="''" [id]="'gender'" [disabled]="true"></app-input-box> 
+          </div>
+        </div>
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'Marital Status'"></app-label>  
+                <app-input-box [type]="'text'" [name]="'maritalStatus'" [value]="''" [id]="'maritalStatus'" [disabled]="true"></app-input-box> 
+            </div>
+            <div 
+                class="md:w-1/2 px-3 mb-3"
+            >
+                <app-label [for]="'State'"></app-label>  
+                <app-input-box [type]="'text'" [name]="'state'" [value]="''" [id]="'state'" [disabled]="true"></app-input-box>
+            </div>
+        </div>
+        <div 
+            class="md:w-2/2 mx-5 mb-5 md:mb-5"
+        >
+            <app-label [for]="'Location'"></app-label>
+            <app-input-box [type]="'text'" [name]="'location'" [value]="''" [id]="'location'" [disabled]="true"></app-input-box>
+       </div>
+
+        <div 
+            class="footer px-5 mt-7 mb-3"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 mt-5 mb-5" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                    <button 
+                        (click)="CloseCurrentModal()" 
+                        class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                    >
+                        Close
+                    </button>
+                </div>               
+            </div>
+        </div>  
+
+    </div>
+    
+</app-dialog>

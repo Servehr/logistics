@@ -1,0 +1,9 @@
+<button 
+    class="w-full px-4 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:text-red-200
+                   bg-CompanyBlue rounded-md shadow focus:outline-red focus:ring-blue-200 focus:ring-4" 
+    (click)="submit()"
+    [disabled]="disabled"
+    [ngClass]="type"
+>
+    <ng-content></ng-content>
+</button>

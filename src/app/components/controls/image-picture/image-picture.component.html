@@ -1,0 +1,35 @@
+<section 
+    class="px-5 py-4 flex shadow-lg justify-center items-center content-center space-x-2 border-3 border-slate-500 bg-gray-200"
+> 
+  <div 
+    class="flex-col justify-center"
+  >
+    <div 
+      class="d-flex p-1 border border-2 border-white w-fit"
+    >
+      <img 
+        [src]="src" 
+        class="rounded-none" 
+        alt="logo" 
+        height="200" 
+        width="200" 
+      />              
+    </div>
+    
+    <div 
+      class="d-flex pl-1 w-full"
+    >
+      <p 
+        class="w-full text-md mt-5 text-black font-bold text-center"
+      >
+        {{ firstname }} {{ surname }}
+      </p> 
+      <p 
+        class="w-full font-bold text-md text-blue-600 text-center"
+      >
+        {{ role }}
+      </p>                
+    </div>
+   </div>
+    
+</section>

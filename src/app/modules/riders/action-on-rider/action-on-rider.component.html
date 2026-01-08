@@ -1,0 +1,52 @@
+<app-dialog 
+    *ngIf="ModalState === 'action-on-rider'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-full md:w-4/12 -mt-30 md:-mt-60'"
+>
+    <div 
+        class="content overflow-x-auto min-h-[400px] max-h-[450px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+      <form 
+        [formGroup]="actionOnRider"
+        class="flex flex-col space-y-5"
+      >
+        <div 
+            class="d-flex"
+        >
+            <div 
+                class="md:w-full px-3 mb-3"
+            >
+                <app-image-picture [src]="'../assets/man.jpg'" [firstname]="'Tijani'" [surname]="'Emeka'" [role]="'Manager'"></app-image-picture>
+            </div>
+            <div 
+                class="md:w-full px-3 mb-3"
+            >
+                <select-option formControlName="action" [options]="Actions" [title]="'- Select Action -'"> </select-option>
+            </div>
+        </div>
+
+        <div 
+            class="footer px-5 -mt-5"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 mt-2 mb-7" 
+                select="footer"
+            >
+                <div 
+                    class="flex col-span-12 justify-center"
+                >
+                    <button 
+                        class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                    >
+                        Take Action
+                    </button>
+                </div>                
+            </div>
+        </div>      
+      </form>
+
+    </div>
+    
+</app-dialog>

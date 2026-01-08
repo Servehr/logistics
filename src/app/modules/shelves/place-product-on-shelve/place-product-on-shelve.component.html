@@ -1,0 +1,86 @@
+<app-dialog 
+    *ngIf="ModalState === 'product-on-shelve'"
+    [title]="title"
+    [wideTall]="'w-full md:w-6/12 -mt-60'"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+>
+    <div 
+        class="overflow-x-auto h-fit w-full scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+        <div 
+            class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+        >
+          <form 
+              [formGroup]="placeProduct"
+              class="flex flex-col space-y-5"
+          >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'State'"></app-label>
+                    <select-option formControlName="state" [options]="Location" [title]="'- Select State -'"> </select-option>
+                </div>
+            </div>
+            <div 
+                class="w-full md:flex mb-3"
+            >
+                <div 
+                    class="md:w-6/12 px-3 mb-3"
+                >
+                    <app-label [for]="'Location'"></app-label>
+                    <select-option formControlName="location" [options]="Location" [title]="'- Select Location -'"> </select-option>
+                </div>
+                <div 
+                    class="md:w-3/12 px-3 mb-3"
+                >
+                    <app-label [for]="'Product'"></app-label>
+                    <app-input-box [type]="'number'" [name]="'product'" [value]="''" [id]="'product'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-3/12 px-3 mb-3"
+                >
+                    <app-label [for]="'Quantity'"></app-label>
+                    <app-input-box [type]="'number'" [name]="'quantity'" [value]="''" [id]="'quantity'"></app-input-box>
+                </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div 
+            class="footer" 
+            style="margin: 20px 0px 25px 0px;"
+        >
+            <div 
+                class="flex gap-6 px-3 justify-between" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-2"
+                >                  
+                  <buttonn 
+                    (click)="sendData()" 
+                    [type]="'bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow'"
+                  >
+                    Cancel
+                  </buttonn>
+                </div> 
+                <div 
+                    class="flex col-span-3 justify-end"
+                >                
+                  <buttonn 
+                    (click)="sendData()" 
+                    [type]="'bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow'"
+                  >
+                    Submit Order
+                  </buttonn>
+                </div>                
+            </div>
+        </div>
+
+    </div>
+</app-dialog>

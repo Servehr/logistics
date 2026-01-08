@@ -1,0 +1,10 @@
+<ng-container
+   *ngIf="control?.touched === true && control?.value?.length === 0"
+>
+  <ul
+     class="text-red-400 font-bold text-sm ml-1"
+  >
+     {{ errorMessages[control?.errors?.isNoted]}}
+     
+ </ul>
+</ng-container>

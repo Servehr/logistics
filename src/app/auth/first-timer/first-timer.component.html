@@ -1,0 +1,85 @@
+<!-- <div class="sm:w-full p-5 md:p-0 mt-5 md:mt-0"> -->
+    <div class="w-full h-screen md:flex md:items-center md:justify-center p-5 md:p-0 md:mt-0 md:bg-gray bg-red-100">
+        <div
+          class="flex flex-col overflow-hidden bg-blue-500 md:bg-white md:rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md md:loginTop topLogin"
+        >
+          <div
+            class="px-10 py-20 pb-10 text-white bg-red-200 md:w-80 w-full flex-shrink-0 flex flex-col items-center justify-evenly md:loginTop"
+          >
+            <div class="flex my-3 py-10 text-4xl font-bold tracking-wider justify-center items-center">
+                <img src="../assets/RachamHub Logistics.png" class="-mt-20" alt="logo" height="100" width="100" />
+            </div>
+          </div>
+          <div class="py-5 px-10 pb-10 md:bg-white md:flex-1 bg-blue-50">
+
+            <div *ngIf="message">
+              <app-alert [status]="status" [id]="message" [colorStatus]="colorStatus"></app-alert>
+            </div>
+
+            <h5 class="w-full my-4 text-lg items-center font-bold text-blue-900 mb-10 text-center md:text-left text-CompanyBlue uppercase">Change Password</h5>
+
+            <form action="#" class="flex flex-col space-y-5 ">
+                <div class="flex flex-col space-y-1">
+                  <!-- <label for="email" class="text-sm font-semibold text-gray-500">Email address</label> -->
+                  <input
+                    type="password"
+                    #password
+                    id="password"
+                    placeholder="Enter current password"
+                    autofocus
+                    class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <!-- <label for="email" class="text-sm font-semibold text-gray-500">Email address</label> -->
+                  <input
+                    type="password"
+                    #password
+                    id="password"
+                    placeholder="Enter new password"
+                    autofocus
+                    class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  />
+                </div>
+              <div class="flex flex-col space-y-1">
+                <div class="flex items-center justify-between">
+                  <!-- <label for="password" class="text-sm font-semibold text-gray-500">Password</label> -->
+                </div>
+                <input
+                  type="password"
+                  #newPassword
+                  id="newPassword"
+                  placeholder="Confirm your new password"
+                  class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                />
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  (click)="authenticate()"
+                  class="w-full px-4 py-5 text-lg font-semibold text-white transition-colors duration-300 hover:text-red-200
+                        bg-CompanyBlue rounded-md shadow hover:bg-red-600 hover:border-3 hover:border-white-400 focus:outline-red focus:ring-blue-200 focus:ring-4"
+                >
+                    <app-spinner *ngIf="showLoading"></app-spinner>
+                  <div class="flex flex-col space-y-1 items-center justify-between" *ngIf="!showLoading">
+                    <h3>Change</h3>
+                  </div>
+                </button>
+              </div>
+              
+              <div class="flex flex-col space-x-2 justify-content-between">
+                <!-- <input
+                  type="checkbox"
+                  id="remember"
+                  class="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
+                /> -->
+                <div class="flex justify-between">
+                   <a [routerLink]="['/login']" class="text-sm text-blue-600 hover:underline focus:text-blue-800 -mt-2 mb-3">Login</a>
+                   <a [routerLink]="['/home']" class="text-sm text-blue-600 hover:underline focus:text-blue-800 -mt-2 mb-3">Home</a>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+    </div>

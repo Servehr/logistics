@@ -1,0 +1,42 @@
+<app-dialog 
+    *ngIf="ModalState === 'stock-history'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-12/12 md:w-4/12 -mt-20'"
+>
+    <div 
+        class="overflow-x-auto h-[700px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+        <div 
+            class="content overflow-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 w-full border"
+        >
+            <app-table [Header]="Header" [TableType]="'products'" [RowAndColumn]="RowAndColumn" [Action]="false" [ViewAction]="false"></app-table>
+        </div>
+        <div 
+            class="footer py-5" 
+            style="margin: 20px 0px 5px 0px;"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                    >
+                        Close
+                    </button>
+                </div> 
+                <div 
+                    class="flex col-span-6 justify-end"
+                >
+                </div>                
+            </div>
+        </div>
+    </div>
+
+</app-dialog>

@@ -1,0 +1,322 @@
+<div 
+    class='flex'
+>
+    <div 
+        class="lg:w-1/5 lg:visible"
+    > 
+        <aside 
+            class="fixed top-0 left-0 w-1/5 duration-500 h-full hidden lg:block md:block  bg-CompanyRed" 
+            aria-label="Sidenav"
+        >        
+            <div 
+                class="overflow-y-auto drop-shadow-xl scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 h-full relative dark:bg-gray-800 dark:border-gray-700"
+            >
+                <div 
+                    class='static top-0 left-0 right-0'
+                >
+                    <app-sidebar></app-sidebar>
+                </div>
+            </div>
+        </aside>
+    </div>
+        
+    <div 
+        class="lg:w-4/5 md:w-4/5 w-full flex lg:flex-row px-3"
+    >
+        <div 
+            class="w-full"
+        >
+
+            <!-- <app-alert [status]="status" [message]="message" [colorStatus]="colorStatus"></app-alert> -->
+
+            <!-- <app-switch (changeState)="changeStatus($event)" [switchState]="switchState" [switchingState]="switchingState"></app-switch> -->
+            
+            <content-header></content-header>
+            
+            <div 
+                class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-5 -mt-5 justify-center items-center"
+            >
+                <div 
+                    class="col-span-12 md:col-span-1 py-2"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:fill-current cursor-pointer hover:fill-red-900" (click)="modalService.addDialog = true">
+                        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
+                      </svg>                                            
+                </div>
+                <div 
+                    class="col-span-12 md:col-span-7"
+                >
+                    <!-- <app-input-box [type]="fieldType" [name]="fieldName" [id]="fieldId" [placeholder]="fieldPlaceHolder"></app-input-box> -->
+                     <app-search></app-search> 
+                </div>
+                <div 
+                    class="col-span-12 md:col-span-4"
+                >
+                    <app-input-box [type]="'date'" [name]="'dated'" [id]="fieldId"></app-input-box>
+                </div>
+            </div>
+            
+            <div 
+                class="grid md:grid-cols-12 grid-cols-1 gap-5 -mt-5 mb-10 justify-center items-center"
+            >
+                <section 
+                    class="col-span-12 justify-center antialiased text-gray-600 py-2 md:px-2"
+                >
+                    <div 
+                        class="h-full"
+                    >
+                        <div 
+                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+                        >
+                            <header 
+                                class="px-5 py-4 border-b border-gray-100"
+                            >
+                                <h1 
+                                    class="font-bold text-red-600 text-lg font-bold"
+                                >
+                                    {{TableTitle}}
+                                </h1>
+                            </header>
+                            <div 
+                                class="p-3"
+                            >
+                                <div 
+                                    class="overflow-x-auto"
+                                >
+                                    <app-table [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+                                </div>
+                            </div>
+
+                            <app-pagination></app-pagination>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <app-footer></app-footer>
+
+        </div> 
+    </div>
+                     
+</div>
+
+
+<app-dialog 
+    *ngIf="modalService.addDialog"
+>
+    <div 
+        class="flex w-full pl-1 pr-3 pt-3 mb-8 header justify-between bg-blue-100"
+    >
+        <span 
+            class="font-bold header p-3 bg-blue-100 w-full"
+        >
+            Make Request
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" class="round-full w-7 h-7 right cursor-pointer hover:fill-red-900 hover:border-2" (click)="modalService.addDialog = false">
+            <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg> 
+    </div>
+    <div 
+        class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+    >
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="w-full px-3 mb-3"
+            >
+                <app-label [for]="'Title'"></app-label>
+                <app-input-box [type]="'text'" [name]="'reason'" [id]="'reason'" [placeholder]="'Enter request name'"></app-input-box>
+            </div>
+        </div>
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="w-full px-3 mb-3"
+            >
+                <app-label [for]="'Give Reason'"></app-label>
+                <text-area [message]="reason" [name]="'reason'" [id]="'reason'" [cols]="35" [rows]="5" [placeholder]="'Tell us what happened'"></text-area>
+            </div>
+        </div>
+        <div 
+            class="md:flex mb-4"
+        >
+            <div 
+                class="w-full px-3"
+            >
+                <app-label [for]="'Amount'"></app-label>
+                <app-input-box [type]="'number'" [name]="'amount'" [id]="'amount'" [placeholder]="'Enter Amount'"></app-input-box>
+            </div>
+        </div> 
+        <div 
+            class="md:flex"
+        >
+            <div 
+                class="w-full px-3"
+            >
+                <app-label [for]="'Priority'"></app-label>
+                <!-- <select-option [options]="options"></select-option>    -->
+            </div>
+        </div> 
+    </div>
+    <div 
+        class="footer p-3"
+    >
+        <div 
+            class="grid grid-cols-12 gap-6 mt-5" 
+            select="footer"
+        >
+            <div 
+                class="col-span-6"
+            >
+                <button 
+                    (click)="modalService.addDialog = false" 
+                    class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                >
+                    Cancel
+                </button>
+            </div> 
+            <div 
+                class="flex col-span-6 justify-end"
+            >
+                <button 
+                    class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                >
+                    Submit
+                </button>
+            </div>                
+        </div>
+    </div>
+    <span 
+        class="w-full justify-center items-center text-white mt-10"
+    >
+        -- --------------- ------------- --- ---------- ------ ------ -------- --- ---- ---- ----- ---- ------- -- 
+    </span>
+</app-dialog>
+
+<app-dialog 
+    *ngIf="modalService.executionStateDialog"
+>
+    <div 
+        class="flex w-full pl-1 pr-3 pt-3 mb-8 header justify-between bg-blue-100 -mt-3"
+    >
+        <span 
+            class="font-bold header p-3 bg-blue-100 w-full text-center"
+        >
+            Execution State
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" class="round-full w-7 h-7 right cursor-pointer hover:fill-red-900 hover:border-2" (click)="modalService.executionStateDialog = false">
+            <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg> 
+    </div>
+    <div 
+        class="content"
+    >
+        <div 
+            class="w-full justify-center items-center p-1 mb-1"
+        >
+            <h1 
+                class="text-white"
+            >
+                You are about delete merchant UNILEVER UNILEVER UNILEVER from the system
+            </h1>
+        </div>
+    </div>
+    <div 
+        class="footer"
+    >
+        <div 
+            class="grid grid-cols-12 gap-6 mb-10" 
+            select="footer"
+        >
+            <div 
+                class="col-span-3"
+            >
+            </div>
+            <div 
+                class="col-span-3"
+            >
+                <button 
+                    (click)="modalService.executionStateDialog = false"
+                    class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                >
+                    Pending/Not Yet Done
+                </button>
+            </div> 
+            <div 
+                class="flex col-span-3 justify-end"
+            >
+                <button 
+                    (click)="modalService.executionStateDialog = false" 
+                    class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                >
+                    Done
+                </button>
+            </div>     
+            <div 
+                class="col-span-3"
+            >
+            </div>           
+        </div>
+    </div>
+</app-dialog>
+
+
+
+<app-dialog 
+    *ngIf="modalService.closeDialog"
+>
+    <div 
+        class="flex w-full pl-1 pr-3 pt-3 mb-8 header justify-between bg-blue-100"
+    >
+        <span 
+            class="font-bold header p-3 bg-blue-100 w-full"
+        >
+            Delete Merchant
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" class="round-full w-7 h-7 right cursor-pointer hover:fill-red-900 hover:border-2" (click)="modalService.closeDialog = false">
+            <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg> 
+    </div>
+    <div 
+        class="content"
+    >
+        <div 
+            class="w-full justify-center items-center p-10 mb-1"
+        >
+            <h1 
+                style="margin-top: -30px;">You are about delete merchant UNILEVER REPORT from the system
+            </h1>
+        </div>
+    </div>
+    <div 
+        class="footer"
+    >
+        <div 
+            class="grid grid-cols-12 gap-6 mb-5" 
+            select="footer"
+        >
+            <div 
+                class="col-span-6"
+            >
+                <button 
+                    (click)="modalService.closeDialog = false" 
+                    class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                >
+                    Cancel
+                </button>
+            </div> 
+            <div 
+                class="flex col-span-6 justify-end"
+            >
+                <button 
+                    class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                >
+                    Delete
+                </button>
+            </div>                
+        </div>
+    </div>
+</app-dialog>

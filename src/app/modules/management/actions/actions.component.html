@@ -1,0 +1,92 @@
+<div 
+    class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200 px-3"
+>
+    <header 
+        class="py-2 border-b border-gray-100 pt-5"
+    >
+        <h3 
+          class="font-semibold text-gray-800 font-bold ml-5"
+        >
+           {{pageTitle}}
+        </h3>
+    </header>
+    <div 
+        class="overflow-x-auto"
+    >
+        <div 
+            class="grid md:grid-cols-12 grid-cols-12 gap-5 md:px-3 md:py-2 mx-2 justify-center items-center"
+        >
+           <div 
+              class="col-span-12"
+           >
+              <form 
+                [formGroup]="roleForm"
+                class="flex flex-col space-y-5"
+              >
+                <!-- <app-input-box ></app-input-box > -->
+                <select-option formControlName="role" [options]="roles" [title]="'- Select a role -'"> </select-option>
+              </form>
+           </div>
+           <!-- <div 
+               class="col-span-4"
+           >
+             <app-input-box ></app-input-box >                                       
+           </div>
+           <div 
+             class="col-span-4"
+           >
+             <app-input-box></app-input-box>
+           </div> -->
+        </div>
+        <div 
+          class="container m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 py-3 px-5 pb-5 mb-7 pt-1"
+        >   
+           <!-- This is for static resource  -->
+           <!-- <app-dynamic-tab-wrapper [dynamicComponents]="components"></app-dynamic-tab-wrapper> -->
+           <!-- This is for dynanic resource -->
+           <!-- <div 
+             class="container m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 p-5"
+           >   
+           </div> -->
+           <div 
+              class="flex w-full h-full gap-3"
+           >
+             <div 
+               class="flex flex-col w-3/12 border-y-2 bg-gray-200 min-h-[10rem] h-fit max-h-[40rem] overflow-y-scroll shadow-md bg-white mt-1"
+             >
+                <label 
+                  class="py-0 static"
+                >
+                   <h3 
+                     class="text-sm text-center bg-slate-300 py-4 font-bold uppercase" 
+                     style="background-color: rgb(238, 217, 217)"
+                   >
+                     {{  'All Resources under level'  }}
+                   </h3>
+                </label>
+                <div 
+                  class='d-flex bg-gray-20'
+                >
+                  <div 
+                    *ngFor="let resource of resources; let i = index"
+                    class="rounded-none hover:bg-red-200 py-5 pl-7 px-0 m-auto w-full text-left font-semibold transition-colors cursor-pointer duration-300 text-sm"
+                    [ngClass]="'border-y-2 border-gray-200'"
+                    (click)="ControlPage(resource)"
+                    style="font-size: 12; padding-top: 15;"
+                  >
+                    {{ resource.name }}
+                  </div>
+                </div>                  
+            </div>
+
+            <div 
+              class="w-9/12 px-0 flex flex-col bg-white h-[40rem] overflow-y-scroll"
+            >
+               <app-setting-control [resource]="resource" [role]="role"></app-setting-control>
+            </div>
+        </div>
+
+       </div>
+    </div>
+
+</div>

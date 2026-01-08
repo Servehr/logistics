@@ -1,0 +1,12 @@
+<ng-container
+   *ngIf="control?.touched === true"
+>
+  <ul
+     class="text-red-400 font-bold text-sm mt-2 ml-5"
+  >
+     {{ errorMessages[control?.errors?.checkBoxRequired]}}
+     
+ </ul>
+
+ <!-- {{ control?.defaultValue }} -->
+</ng-container>

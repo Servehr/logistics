@@ -1,0 +1,221 @@
+<app-dialog 
+    *ngIf="ModalState === 'update-package'"
+    [title]="title"
+    [wideTall]="'w-full md:w-6/12 -mt-[10px]'"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+>
+    <div 
+        class="overflow-x-auto h-[800px] w-full scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+        <div 
+            class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+        >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Merchant'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'merchant'" [value]="''" [id]="'firstname'" [placeholder]="'Enter Merchant Name'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Product Name'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'productName'" [value]="''" [id]="'productName'" [placeholder]="'Enter Product Name'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex mb-3"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Amount'"></app-label>
+                    <app-input-box [type]="'number'" [name]="'amount'" [value]="''" [id]="'amount'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Quantity'"></app-label>
+                    <app-input-box [type]="'number'" [name]="'productQuantity'" [value]="''" [id]="'productQuantity'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Discount'"></app-label>
+                    <app-input-box [type]="'number'" [name]="'productDiscount'" [value]="''" [id]="'productDiscount'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex mb-3"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Total'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'total'" [value]="''" [id]="'total'" [placeholder]="'Total'"></app-input-box>
+                </div>
+            </div>
+        </div>
+        <div 
+            class="content overflow-auto h-[250px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 w-full border border-purple-600"
+        >
+            <app-table [Header]="Header[0].product" [TableType]="'products'" [RowAndColumn]="RowAndColumn[0]['products']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+        </div>
+        
+        <div 
+            class="md:flex mt-2"
+        >
+            <div 
+                class="w-full px-1 mb-3"
+            >
+                <app-label [for]="'Total Order'"></app-label>
+                <app-input-box [type]="'text'" [name]="'totalOrder'" [value]="''" [id]="'totalOrder'" [placeholder]="'Total Order'"></app-input-box>
+            </div>
+        </div>
+
+        <div 
+            class="flex w-full"
+        >
+            <span 
+                class="font-bold header p-3 bg-blue-100 w-full mt-3 mb-5"
+            >
+                Customer Detail
+            </span>
+        </div>
+
+        <div 
+            class="w-full"
+        >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Firstname'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'firstname'" [value]="firstName" [id]="'firstname'" [placeholder]="'Enter Firstname'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Surname'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'surname'" [value]="surName" [id]="'surname'" [placeholder]="'Enter Surname'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Phone Number'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'phone'" [value]="phoneNumber" [id]="'phone'" [placeholder]="'Enter Phone Number'"></app-input-box>
+                </div>
+                <div 
+                    class="md:w-1/2 px-3 mb-3"
+                >
+                    <app-label [for]="'Alternate Phone Number'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'phone-2'" [value]="phoneNumber" [id]="'phone-2'" [placeholder]="'Enter Alternate Phone Number'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >            
+                <div 
+                    class="w-full mx-3 mb-6 md:mb-5"
+                >
+                    <app-label [for]="'State'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'state'" [value]="''" [id]="'state'" [placeholder]="'e.g Lagos'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >            
+                <div 
+                    class="w-full mx-3 mb-6 md:mb-5"
+                >
+                    <app-label [for]="'Address'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'address'" [value]="''" [id]="'address'" [placeholder]="'Olusoji Idowu, Obanikoro'"></app-input-box>
+                </div>
+            </div>
+        </div>
+
+        <div 
+            class="flex w-full"
+        >
+            <span 
+                class="font-bold header p-3 bg-blue-100 w-full mt-3 mb-5"
+            >
+                Order Location
+            </span>
+        </div>
+
+        <div 
+            class="w-full"
+        >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'State'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'state'" [value]="''" [id]="'state'" [placeholder]="'e.g Lagos'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Area'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'area'" [value]="''" [id]="'area'" [placeholder]="'e.g MaryLand'"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >            
+                <div 
+                    class="w-full mx-3 mb-6 md:mb-5"
+                >
+                    <app-label [for]="'Location'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'location'" [value]="''" [id]="'location'" [placeholder]="'e.g Leventis'"></app-input-box>
+                </div>
+            </div>
+        </div>
+
+        <div 
+            class="footer" style="margin: 10px 0px 20px 0px;"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 px-3" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                    >
+                        Cancel
+                    </button>
+                </div> 
+                <div 
+                    class="flex col-span-6 justify-end"
+                >
+                </div>                
+            </div>
+        </div>
+
+    </div>
+</app-dialog>

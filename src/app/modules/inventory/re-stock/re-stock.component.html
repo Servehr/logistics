@@ -1,0 +1,91 @@
+<app-dialog 
+    *ngIf="ModalState === 're-stock'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-full md:w-5/12 -mt-30 md:-mt-60'"
+>
+    <div 
+        class="content overflow-x-auto min-h-fit max-h-[700px] pb-8 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-5"
+    >
+       <form 
+        [formGroup]="ReStock"
+        class="flex flex-col space-y-5"
+      >
+         <div 
+            class="content overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400"
+         >
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Merchant'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'merchant'" [value]="''" [id]="'merchant'" [disabled]="true"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Product Name'"></app-label>
+                    <app-input-box [type]="'text'" [name]="'productName'" [value]="''" [id]="'productName'" [disabled]="true"></app-input-box>
+                </div>
+            </div>
+            <div 
+                class="md:flex mb-3"
+            >
+                <div 
+                    class="w-full px-3 mb-3"
+                >
+                    <app-label [for]="'Amount'"></app-label>
+                    <input-field
+                        [id]="'amount'"
+                        #amount
+                        [name]="'amount'"
+                        [placeholder]="'Enter amount'"
+                        [type]="'number'"
+                        [value]="''"
+                        formControlName="amount"
+                        [customErrorMessages]="errorMessages"
+                    >
+                    </input-field>
+                </div>
+            </div>
+        </div>
+        <div 
+            class="footer" 
+            style="margin: 15px 0px 5px 0px;"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 px-5 mt-5" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                    >
+                        Cancel
+                    </button>
+                </div> 
+                <div 
+                    class="flex col-span-6 justify-end"
+                >
+                    <button 
+                        (click)="sendData()" 
+                        class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                    >
+                        Add To Stock
+                    </button>
+                </div>                
+            </div>
+        </div>
+       </form>
+    </div>
+</app-dialog>

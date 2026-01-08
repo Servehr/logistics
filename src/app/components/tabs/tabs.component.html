@@ -1,0 +1,24 @@
+<section>
+  <div 
+    class="xl:w-full xl:mx-0 h-12 hidden sm:block bg-white shadow rounded px-5"
+  >
+    <button  
+       *ngFor="let tab of TabPages; let i = index;"
+       (click)="setActive(i)" 
+       class="focus:outline-none focus:text-indigo-700 text-sm pt-3 rounded-t text-indigo-700 mr-12 cursor-pointer"
+     >
+       <span 
+         class="ml-1 font-normal"
+       >
+         {{ tab }} 
+       </span>
+       <div 
+         *ngIf="position === i"
+         class="w-full h-1 bg-indigo-700 rounded-t-md"
+       >
+       </div>
+     </button>
+
+   </div>
+</section>
+

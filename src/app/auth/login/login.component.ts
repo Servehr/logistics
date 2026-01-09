@@ -149,31 +149,33 @@ export class LoginComponent implements OnInit {
 
     authenticate = async () => 
     {
-       await delay(5000)
        this.store.dispatch(SetLoadingStatus({ loading: true }))
        let em = this.loginForm.value['email']
        let pswd = this.loginForm.value['password']
        if(this.loginForm.valid)
        {
           
-          if(em === 'admin@company.com' && pswd === 'password')
+          setTimeout(() => 
           {
-              this.router.navigate(['/overview'])
-          }
-          this.store.dispatch(SetLoadingStatus({ loading: false }))
-          //  const email = UserDetail['email']!
-          //  const password = UserDetail['password']! 
+            if(em === 'admin@company.com' && pswd === 'password')
+            {
+                this.router.navigate(['/overview'])
+            }
+            this.store.dispatch(SetLoadingStatus({ loading: false }))
+            //  const email = UserDetail['email']!
+            //  const password = UserDetail['password']! 
 
-          // this.store.dispatch(SetLoadingStatus({ loading: true }))
-          // of(this.loginForm.value)
-          // .pipe(delay(1000))
-          // .subscribe(UserDetail => 
-          //     {
-          //       const email = UserDetail['email']!
-          //       const password = UserDetail['password']!      
-          //       this.store.dispatch(START_LOGIN({ email, password }))
-          //     }
-          //   )
+            // this.store.dispatch(SetLoadingStatus({ loading: true }))
+            // of(this.loginForm.value)
+            // .pipe(delay(1000))
+            // .subscribe(UserDetail => 
+            //     {
+            //       const email = UserDetail['email']!
+            //       const password = UserDetail['password']!      
+            //       this.store.dispatch(START_LOGIN({ email, password }))
+            //     }
+            //   )
+          }, 10000)
        } else {
           this.loginForm.markAllAsTouched();
           this.store.dispatch(SetLoadingStatus({ loading: false }))

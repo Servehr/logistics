@@ -175,7 +175,7 @@ export class LoginComponent implements OnInit {
             //       this.store.dispatch(START_LOGIN({ email, password }))
             //     }
             //   )
-          }, 8000)
+          }, 4000)
        } else {
           this.loginForm.markAllAsTouched();
           this.store.dispatch(SetLoadingStatus({ loading: false }))

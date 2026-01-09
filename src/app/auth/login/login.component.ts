@@ -159,9 +159,9 @@ export class LoginComponent implements OnInit {
           {
             if(em === 'admin@company.com' && pswd === 'password')
             {
+                this.store.dispatch(SetLoadingStatus({ loading: false }))
                 this.router.navigate(['/overview'])
             }
-            this.store.dispatch(SetLoadingStatus({ loading: false }))
             //  const email = UserDetail['email']!
             //  const password = UserDetail['password']! 
 

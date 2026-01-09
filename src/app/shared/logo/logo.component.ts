@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class LogoComponent {
 
-    height: number = 75
-    width: number = 75
+    height: number = 150
+    width: number = 150
     alt: string = 'logo'
-    image: string = '../../../assets/RachamHub Logistics.png'   //'../../../assets/ebby-express-logo.jpg';  //
+    image: string = '../../../assets/logistics.png'   //'../../../assets/ebby-express-logo.jpg';  //
 
     constructor(private router: Router){}
 

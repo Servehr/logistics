@@ -1,185 +1,152 @@
 <div 
-    class='flex'
+    class="grid md:grid-cols-12 grid-cols-1 gap-5 md:p-3 mt-2 mb-5 justify-center items-center"
 >
-    <div 
-        class="lg:w-1/5 lg:visible"
-    > 
-        <aside 
-            class="fixed top-0 left-0 w-1/5 duration-500 h-full hidden lg:block md:block  bg-CompanyRed" 
-            aria-label="Sidenav"
-        >        
-            <div 
-                class="overflow-y-auto drop-shadow-xl scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 h-full relative dark:bg-gray-800 dark:border-gray-700"
-            >
-                <div 
-                    class='static top-0 left-0 right-0'
-                >
-                    <app-sidebar></app-sidebar>
-                </div>
-            </div>
-        </aside>
-    </div>
-        
-    <div 
-        class="lg:w-4/5 md:w-4/5 w-full flex lg:flex-row px-3"
-    >
-        <div 
-            class="w-full"
-        >            
-            <content-header></content-header>
-            
-            <div 
-                class="grid md:grid-cols-12 grid-cols-1 gap-5 md:p-3 mt-2 mb-5 justify-center items-center"
-            >
-                <ng-container 
-                    *ngFor="let summary of summaries"
-                >
-                    <div 
-                        class="col-span-3 bg-white"
-                    >
-                        <app-pulsate [summaries]="summary" [box]="'true'"></app-pulsate>
-                    </div>
-                </ng-container>
-            </div>
-            
-            <div   
-                class="grid md:grid-cols-12 grid-cols-1 gap-5 mt-2 mb-10 justify-center items-center"
-            >
-                <section 
-                    class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
-                >
-                    <div 
-                        class="h-full"
-                    >
-                        <div 
-                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
-                        >
-                            <header 
-                                class="px-5 py-4 border-b border-gray-100"
-                            >
-                                <h5 
-                                    class="font-semibold text-gray-800"
-                                >
-                                    Top Merchants
-                                </h5>
-                            </header>
-                            <div 
-                                class="p-3"
-                            >
-                                <div 
-                                    class="overflow-x-auto"
-                                >
-                                    <app-table [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
-                                </div>
-                                <div 
-                                    class="flex p-3 ml-4 text-red-600 w-full"
-                                >
-                                    <a routerLink="/merchants" class="text-left cursor-pointer hover:font-bold" >View all</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section 
-                    class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
-                >
-                    <div 
-                        class="h-full"
-                    >
-                        <div 
-                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
-                        >
-                            <header 
-                                class="px-5 py-4 border-b border-gray-100"
-                            >
-                                <h5 class="font-semibold text-gray-800">Top Riders</h5>
-                            </header>
-                            <div 
-                                class="p-3"
-                            >
-                                <div 
-                                    class="overflow-x-auto"
-                                >                                    
-                                    <app-table [Header]="Header[0].rider" [TableType]="'riders'" [RowAndColumn]="RowAndColumn[0]['riders']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
-                                </div>
-                                <div 
-                                    class="flex p-3 ml-4 text-red-600 w-full"
-                                >
-                                    <a routerLink="/riders" class="text-left cursor-pointer hover:font-bold">View all</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section 
-                    class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
-                >
-                    <div 
-                        class="h-full"
-                    >
-                        <div 
-                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
-                        >
-                            <header 
-                                class="px-5 py-4 border-b border-gray-100"
-                            >
-                                <h5 class="font-semibold text-gray-800">Requests</h5>
-                            </header>
-                            <div 
-                                class="p-3"
-                            >
-                                <div 
-                                    class="overflow-x-auto"
-                                >                                    
-                                    <app-table [Header]="Header[0].request" [RowAndColumn]="RowAndColumn[0]['requests']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
-                                </div>
-                                <div 
-                                    class="flex p-3 ml-4 text-red-600 w-full"
-                                >
-                                    <a routerLink="/requests" class="text-left cursor-pointer hover:font-bold">View all</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section
-                    class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
-                >
-                    <div 
-                        class="h-full"
-                    >
-                        <div 
-                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
-                        >
-                            <header 
-                                class="px-5 py-4 border-b border-gray-100"
-                            >
-                                <h5 class="font-semibold text-gray-800">Transactions</h5>
-                            </header>
-                            <div 
-                                class="p-3"
-                            >
-                                <div 
-                                    class="overflow-x-auto"
-                                >                                    
-                                    <app-table [Header]="Header[0].transaction" [RowAndColumn]="RowAndColumn[0]['transactions']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
-                                </div>
-                                <div 
-                                    class="flex p-3 ml-4 text-red-600 w-full"
-                                >
-                                    <a routerLink="/requests" class="text-left cursor-pointer hover:font-bold">View all</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <app-footer></app-footer>
-
-        </div> 
-    </div>
-                     
+   <ng-container 
+     *ngFor="let summary of summaries"
+   >
+     <div 
+       class="col-span-3 bg-white"
+     >
+        <app-pulsate [summaries]="summary" [box]="'true'"></app-pulsate>
+     </div>
+   </ng-container>
 </div>
-
-
+           
+<div   
+   class="grid md:grid-cols-12 grid-cols-1 gap-5 mt-2 mb-10 justify-center items-center"
+>
+  <section 
+    class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
+  >
+    <div 
+      class="h-full"
+    >
+       <div 
+          class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+       >
+         <header 
+            class="px-5 py-4 border-b border-gray-100"
+         >
+            <h5 
+              class="font-semibold text-gray-800"
+            >
+              Top Merchants
+            </h5>
+         </header>
+         <div 
+           class="p-3"
+         >
+           <div 
+              class="overflow-x-auto"
+           >
+              <app-table [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+           </div>
+           <div 
+              class="flex p-3 ml-4 text-red-600 w-full"
+           >
+             <a routerLink="/merchants" class="text-left cursor-pointer hover:font-bold" >View all</a>
+           </div>
+         </div>
+       </div>
+    </div>
+   </section>
+   <section 
+     class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
+   >
+      <div 
+        class="h-full"
+      >
+        <div 
+          class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+        >
+          <header 
+            class="px-5 py-4 border-b border-gray-100"
+          >
+            <h5 
+              class="font-semibold text-gray-800"
+            >
+               Top Riders
+            </h5>
+          </header>
+          <div 
+            class="p-3"
+          >
+            <div 
+              class="overflow-x-auto"
+            >                                    
+              <app-table [Header]="Header[0].rider" [TableType]="'riders'" [RowAndColumn]="RowAndColumn[0]['riders']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+            </div>
+            <div 
+              class="flex p-3 ml-4 text-red-600 w-full"
+            >
+              <a routerLink="/riders" class="text-left cursor-pointer hover:font-bold">View all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </section>
+   
+   <section 
+     class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
+   >
+     <div 
+       class="h-full"
+     >
+        <div 
+         class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+        >
+         <header 
+            class="px-5 py-4 border-b border-gray-100"
+         >
+            <h5 class="font-semibold text-gray-800">Orders</h5>
+         </header>
+         <div 
+           class="p-3"
+         >
+            <div 
+              class="overflow-x-auto"
+            >                                    
+               <app-table [Header]="Header[0].request" [RowAndColumn]="RowAndColumn[0]['requests']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+            </div>
+            <div 
+              class="flex p-3 ml-4 text-red-600 w-full"
+            >
+              <a routerLink="/orders" class="text-left cursor-pointer hover:font-bold">View all</a>
+            </div>
+          </div>
+        </div>
+       </div>
+    </section>
+    
+    <section
+        class="col-span-6 justify-center antialiased text-gray-600 py-2 md:px-2"
+    >
+       <div 
+          class="h-full"
+       >
+          <div 
+            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+          >
+            <header 
+               class="px-5 py-4 border-b border-gray-100"
+            >
+               <h5 class="font-semibold text-gray-800">ORder</h5>
+            </header>
+            <div 
+               class="p-3"
+            >
+              <div 
+                class="overflow-x-auto"
+              >                                    
+                <app-table [Header]="Header[0].transaction" [RowAndColumn]="RowAndColumn[0]['transactions']" [Action]="Action" [ViewAction]="ViewAction"></app-table>
+              </div>
+              <div 
+                class="flex p-3 ml-4 text-red-600 w-full"
+              >
+                <a routerLink="/overview" class="text-left cursor-pointer hover:font-bold">View all</a>
+              </div>
+            </div>
+           </div>
+       </div>
+    </section>
+</div>

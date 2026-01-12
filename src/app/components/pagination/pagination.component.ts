@@ -20,7 +20,7 @@ export class PaginationComponent implements OnInit {
     @Input() totalPage: number = 8
     @Input() id: string = ""
     @Input() noOfPages: number = 3
-    loading: boolean = false
+    loading: boolean = true
 
     increase: number[] = []
     decrease: number[] = []

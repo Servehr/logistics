@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'logo',
+  selector: 'app-logo',
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.css']
 })

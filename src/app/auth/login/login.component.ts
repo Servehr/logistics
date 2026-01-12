@@ -57,7 +57,7 @@ export const CheckNote = (control: AbstractControl): ValidationErrors | null =>
 })
 export class LoginComponent implements OnInit {
 
-    title: string = 'Rachamhub: Login'
+    title: string = 'Logistics: Login'
     showLoading: boolean = false
     endLoading: boolean = false
     

@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ModalService } from '../../../app/service/shared/modal/modal.service';
 import { Store } from '@ngrx/store';
 import { AddingUser, AllUser, AllUserByType, SearchUser, SingleUser, UpdateUser } from 'src/app/state/actions/user.actions';
 import { getUsers, getUserInfo, getValueToUpdate } from 'src/app/state/selector/user.selector';
@@ -18,9 +17,7 @@ import { getPageLinks } from 'src/app/state/selector/paginate.selector';
 })
 export class StaffsComponent implements OnInit { 
 
-    title: string = 'RachamHub - Merchants'
-    TableTitle: string = 'Staffs'
-    status: string = ''
+    title: string = 'RachamHub - Staffs'
     message:string = ''
     colorStatus:string = ''
     show:string = 'false'
@@ -158,7 +155,7 @@ export class StaffsComponent implements OnInit {
     fromPage: string = "users"
     noOfPages: number = 3
     
-    constructor(public modalService: ModalService, private store: Store<AppState>)
+    constructor(private store: Store<AppState>)
     {
         this.store.dispatch(AllUser({ currentPage: this.currentPage, perPage: this.perPage, allPages: 0 }))         
     }
@@ -190,19 +187,15 @@ export class StaffsComponent implements OnInit {
                 this.responseStatus = '0'
                 if(data.response.operation === "update-user")
                 {
-                    this.modalService.successDialog = true
                     this.message = `User successfully updated`
                 } 
                 if(data.response.operation === "add-user")
                 {
-                    this.modalService.successDialog = true
                     this.message = `User successfully onboarded`
                 } 
                 this.getUsers()
                 setTimeout(() => {
                     this.responseStatus = '0'
-                    this.modalService.addDialog = false
-                    this.modalService.successDialog = false
                     this.message = ``
                 }, 3000)
             } else {

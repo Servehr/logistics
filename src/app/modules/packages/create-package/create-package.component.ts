@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { ModalService } from 'src/app/service/shared/modal/modal.service';
+
 
 @Component({
   selector: 'app-create-package',

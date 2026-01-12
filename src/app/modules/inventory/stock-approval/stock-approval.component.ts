@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from 'src/app/service/shared/modal/modal.service';
+
 
 @Component({
   selector: 'app-stock-approval',
@@ -15,5 +15,4 @@ export class StockApprovalComponent
     @Input() fieldId: string = 'search-merchant'
     @Input() fieldPlaceHolder: string = 'Enter keyword to search ...'
      
-    constructor(public modalService: ModalService){}
 }

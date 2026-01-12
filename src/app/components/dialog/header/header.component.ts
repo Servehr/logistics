@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from 'src/app/service/shared/modal/modal.service';
 
 @Component({
   selector: 'dialog-header',
@@ -10,5 +9,4 @@ export class HeaderComponent {
 
   @Input() HeaderTitle: string = ''
 
-  constructor(public modalService: ModalService){}
 }

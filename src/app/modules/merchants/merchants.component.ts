@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalService } from '../../service/shared/modal/modal.service'
 
 @Component({
   selector: 'app-merchants',
@@ -94,8 +93,6 @@ export class MerchantsComponent {
 
     @Input() buttonText:string = 'Search'
     @Input() buttonColor:string = 'bg-CompanyBlue'
-
-    constructor(public modalService: ModalService){}
     
 
     changeStatus = (event: any) => 

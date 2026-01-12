@@ -163,8 +163,6 @@ export class AddStaffComponent {
         this.country_id = -1
         this.capital_id = -1
         this.address = ""
-
-        // this.modalService.addDialog = false
     }
 
     cancelInput = () => 
@@ -200,7 +198,6 @@ export class AddStaffComponent {
          onboardedBy: '',
          image: ''
         }
-        // this.modalService.addDialog = false
     }
 
     CloseCurrentModal()

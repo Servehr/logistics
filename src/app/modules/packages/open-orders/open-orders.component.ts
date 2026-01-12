@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { ModalService } from '../../../../app/service/shared/modal/modal.service';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -166,7 +165,7 @@ export class OpenOrdersComponent {
        orderControls: this.fb.array([])
     })
 
-    constructor(public modalService: ModalService, private fb: FormBuilder){}
+    constructor(private fb: FormBuilder){}
 
     get orderControls()
     {

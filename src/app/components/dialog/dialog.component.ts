@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalService } from '../../service/shared/modal/modal.service'
 
 @Component({
   selector: 'app-dialog',
@@ -8,9 +7,6 @@ import { ModalService } from '../../service/shared/modal/modal.service'
 })
 export class DialogComponent {
     
-  constructor(public modalService: ModalService){
-     this.modalService.OpenCloseDialog = false
-  }
 
   @Input() isOpenOrClose: string = ''
 

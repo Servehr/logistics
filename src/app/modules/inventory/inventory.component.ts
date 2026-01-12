@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from '../../../app/service/shared/modal/modal.service';
+
 
 @Component({
   selector: 'app-inventory',
@@ -94,8 +94,6 @@ export class InventoryComponent {
     @Input() buttonText:string = 'Search'
     @Input() buttonColor:string = 'bg-CompanyBlue'
     @Input() reason:string = ''
-
-    constructor(public modalService: ModalService){}
 
 
     changeStatus = (event: any) => 

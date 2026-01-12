@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class NewAccountComponent {
 
-  title: string = 'Delete Account'
+  title: string = 'New Account'
   value: string = ''
   
   errorMessages = 

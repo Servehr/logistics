@@ -7,10 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./shelves.component.css']
 })
 export class ShelvesComponent { 
-
-  title: string = 'Order Location'
   
-  TableTitle: string = 'Shelves'
+  title: string = 'Shelves'
   
   @Input() ModalState: string = ''
   @Output() FromPackage: EventEmitter<string> = new EventEmitter()

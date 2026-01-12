@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from '../../../app/service/shared/modal/modal.service';
+
 
 @Component({
   selector: 'app-reports',
@@ -9,8 +9,7 @@ import { ModalService } from '../../../app/service/shared/modal/modal.service';
 
 export class ReportsComponent 
 {
-    title: string = 'RachamHub - Merchants'
-    TableTitle: string = 'Report'
+    title: string = 'RachamHub - Report'
     status: string = 'Successful'
     message:string = 'Post Sucessfully Sent'
     colorStatus:string = ''
@@ -127,7 +126,6 @@ export class ReportsComponent
     @Input() buttonText:string = 'Search'
     @Input() buttonColor:string = 'bg-CompanyBlue'
 
-    constructor(public modalService: ModalService){}
 
     ViewOrderReport(event: any)
     {

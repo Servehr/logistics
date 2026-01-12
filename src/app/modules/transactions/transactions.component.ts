@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from '../../../app/service/shared/modal/modal.service';
+
 
 @Component({
   selector: 'app-transactions',
@@ -8,12 +8,12 @@ import { ModalService } from '../../../app/service/shared/modal/modal.service';
 })
 export class TransactionsComponent {
 
-    title: string = 'RachamHub - Merchants'
-    TableTitle: string = 'Transactions'
+    title: string = 'RachamHub - Transactions'
     status: string = 'Successful'
     message:string = 'Post Sucessfully Sent'
     colorStatus:string = ''
     reason:string = ''
+    ModalState: string = ''
 
     firstName:string = ''
     surName:string = ''
@@ -40,6 +40,8 @@ export class TransactionsComponent {
       { key: 'russia', value:'Moscow' }
     ]
     location:string = ''
+
+    @Input() ActionName: string = 'transactions'
 
     @Input() labelName: string = ''
 
@@ -157,8 +159,6 @@ export class TransactionsComponent {
       { key: 'high', value:'High' },
     ]
 
-    constructor(public modalService: ModalService){}
-
 
     changeStatus = (event: any) => 
     {
@@ -181,6 +181,11 @@ export class TransactionsComponent {
             break;
         }
         return this.colorStatus
+    }
+
+    CloseCurrentModal(event: any)
+    {
+       this.ModalState = event
     }
 
 }

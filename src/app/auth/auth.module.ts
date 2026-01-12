@@ -1,23 +1,28 @@
 import { NgModule } from '@angular/core';
 
-import { AuthRoutingModule } from './auth-routing.module';
-import { RegisterComponent } from './register/register.component';
-import { InputFieldComponent } from '../components/controls/input-field/input-field.component';
+import { AuthRoutingComponent, AuthRoutingModule } from './auth-routing.module';
+import { AuthComponent } from './auth.component';
 import { SharedModule } from '../shared.module';
+import { LoginComponent } from './login/login.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetComponent } from './reset/reset.component';
+import { FirstTimerComponent } from './first-timer/first-timer.component';
 
 
 @NgModule({
   declarations: [  
-    // InputFieldComponent,
+    AuthRoutingComponent,
+    LoginComponent,
+    ForgotComponent,
     RegisterComponent,
+    ResetComponent,
+    FirstTimerComponent,
+    AuthComponent,
   ],
   imports: [
     AuthRoutingModule,
     SharedModule
-  ],
-  exports: [
-    // InputFieldComponent,
-    RegisterComponent
   ]
 })
 export class AuthModule { }

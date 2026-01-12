@@ -57,7 +57,7 @@ export const CheckNote = (control: AbstractControl): ValidationErrors | null =>
 })
 export class LoginComponent implements OnInit {
 
-    title: string = 'Rachamhub: Login'
+    title: string = 'Logistics: Login'
     showLoading: boolean = false
     endLoading: boolean = false
     
@@ -175,7 +175,7 @@ export class LoginComponent implements OnInit {
             //       this.store.dispatch(START_LOGIN({ email, password }))
             //     }
             //   )
-          }, 8000)
+          }, 3000)
        } else {
           this.loginForm.markAllAsTouched();
           this.store.dispatch(SetLoadingStatus({ loading: false }))

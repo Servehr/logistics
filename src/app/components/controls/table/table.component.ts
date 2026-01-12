@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalService } from '../../../service/shared/modal/modal.service'
 import { SetValueToUpdate } from 'src/app/state/actions/user.actions';
 import { Store } from '@ngrx/store';
 import AppState from 'src/app/state/app.state';
@@ -27,7 +26,7 @@ export class TableComponent {
     @Input() TableType: string = ''
     @Input() SubViewAction: boolean = false
     @Input() Availability: boolean = false
-    @Input() ActionName: string = ''
+    @Input() ActionName: string = 'create-package'
     @Input() Shelve: boolean = false
     @Output() userToUpdate: EventEmitter<number> = new EventEmitter()
     @Output() ModalState: EventEmitter<string> = new EventEmitter()
@@ -49,12 +48,11 @@ export class TableComponent {
       }
     ]
 
-    constructor(private store: Store<AppState>, public modalService: ModalService){}
+    constructor(private store: Store<AppState>){}
 
     addOrUpdate = (row: User, i: number) => 
     {
         this.store.dispatch(SetValueToUpdate({ user: row, status: true, position: i }))
-        this.modalService.addDialog = true
     }
 
     ViewPackage()
@@ -73,7 +71,7 @@ export class TableComponent {
     }
 
     UpdatePackage(column: any, i: any)
-    { 
+    {
        this.ModalState.emit('update-package')
     }
 

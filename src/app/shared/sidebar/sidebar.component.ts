@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from "@angular/router";
 })
 export class SidebarComponent {
 
+  @Input() SideBar: boolean = false
+  @Output() CloseSideBar: EventEmitter<boolean> = new EventEmitter()
 
   pages: { name: string, route: string, icon: any, hasSubMenu: boolean, subMenu?: { name: string, route: string, icon: any }[]  }[] = [
       { name: "Overview", route: '/overview', icon: "", hasSubMenu: false  },
@@ -112,6 +114,12 @@ export class SidebarComponent {
   overview = () =>
   {
       this.router.navigate(['/overview'])
+  }
+
+  goTo(page: string)
+  {
+     this.CloseSideBar.emit(false)
+     this.router.navigate([page])    
   }
 
 }

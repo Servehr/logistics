@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DynamicTabService } from '../../../app/service/shared/tab/dynamic-tab.service';
 
 @Component({
   selector: 'app-settings',
@@ -28,15 +27,13 @@ export class SettingsComponent
 
     roleForm: FormGroup;    
 
-    constructor(public dynamicTabService: DynamicTabService)
+    constructor()
     {
         this.roleForm = new FormGroup(
         {
           role: new FormControl('', [Validators.required])
         }) 
     }
-
-    // components = this.dynamicTabService.getSettingsDynamicComponents()
     
     ControlPage(resource: { id: number, name: string })
     {

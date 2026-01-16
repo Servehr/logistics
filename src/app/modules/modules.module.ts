@@ -56,6 +56,18 @@ import { NewRiderComponent } from './riders/new-rider/new-rider.component';
 import { RemoveRiderComponent } from './riders/remove-rider/remove-rider.component';
 import { RiderDetailsComponent } from './riders/rider-details/rider-details.component';
 import { UpdateRiderComponent } from './riders/update-rider/update-rider.component';
+import { OpenOrdersComponent } from './packages/open-orders/open-orders.component';
+import { PendingOrdersComponent } from './packages/pending-orders/pending-orders.component';
+import { ReturnedOrdersComponent } from './packages/returned-orders/returned-orders.component';
+import { GeneralReportComponent } from './reports/general-report/general-report.component';
+import { SalesReportComponent } from './reports/sales-report/sales-report.component';
+import { RankingReportComponent } from './reports/ranking-report/ranking-report.component';
+import { StockApprovalComponent } from './inventory/stock-approval/stock-approval.component';
+import { InventoryStockApprovalComponent } from './inventory/inventory-stock-approval/inventory-stock-approval.component';
+import { CategoriesComponent } from './management/categories/categories.component';
+import { DepartmentsComponent } from './management/departments/departments.component';
+import { RolesComponent } from './management/roles/roles.component';
+import { RexourcesComponent } from './management/rexources/rexources.component';
 
 
 @NgModule({
@@ -70,6 +82,9 @@ import { UpdateRiderComponent } from './riders/update-rider/update-rider.compone
 
     ReportsComponent,
     ViewReportComponent,
+    GeneralReportComponent,
+    SalesReportComponent,
+    RankingReportComponent,
 
     AccountComponent,
     ViewReportComponent,
@@ -86,6 +101,10 @@ import { UpdateRiderComponent } from './riders/update-rider/update-rider.compone
     TabsComponent,
 
     PackagesComponent,
+    OpenOrdersComponent,
+    PendingOrdersComponent,
+    ReturnedOrdersComponent,
+
     AvailabilityComponent,
     CancelOrderComponent,
     CreatePackageComponent,
@@ -93,6 +112,8 @@ import { UpdateRiderComponent } from './riders/update-rider/update-rider.compone
     UpdatePackageComponent,
 
     NewAccountComponent,
+    StockApprovalComponent,
+    InventoryStockApprovalComponent,
     RemoveAccountComponent,
 
     ShelvesComponent,
@@ -101,6 +122,10 @@ import { UpdateRiderComponent } from './riders/update-rider/update-rider.compone
 
     ManagementComponent,
     ActionsComponent,
+    CategoriesComponent,
+    DepartmentsComponent,
+    RolesComponent,
+    RexourcesComponent,
 
     InventoryComponent,
     NewStockComponent,
@@ -130,7 +155,7 @@ import { UpdateRiderComponent } from './riders/update-rider/update-rider.compone
     PlacardComponent,
     NotificationsComponent,
     
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     ModuleRoutingModule,

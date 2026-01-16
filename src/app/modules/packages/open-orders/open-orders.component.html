@@ -1,1 +1,19 @@
-<h1>Open Order</h1>
+<app-table 
+   (ModalState)="CancelPackage($event)"   
+   [Header]="Header[0].order" 
+   [TableType]="'orders'" 
+   [RowAndColumn]="RowAndColumn[0]['orders']" 
+   [Action]="Action" 
+   [ActionName]="ActionName" 
+   [ViewAction]="ViewAction"
+>
+</app-table>
+
+
+<app-availability [ModalState]="ModalState" (FromPackage)="CheckPackageAvailability($event)"></app-availability>
+
+<app-cancel-order [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-cancel-order>
+
+<app-view-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-view-package>
+
+<app-update-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-update-package>

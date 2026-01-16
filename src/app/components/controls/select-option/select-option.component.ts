@@ -24,7 +24,7 @@ export class SelectOptionComponent implements OnInit, ControlValueAccessor
   options: { id: string, name: string }[] = []
 
   @Input()
-  value: any
+  value: string = ''
   
   @Input() customError: Record<string, string> = { }
   

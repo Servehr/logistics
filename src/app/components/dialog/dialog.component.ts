@@ -22,4 +22,9 @@ export class DialogComponent {
      this.CloseModal.emit("")
   }
 
+  doNotClose(event: any)
+  {
+      event.stopPropagation()
+  }
+
 }

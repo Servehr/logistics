@@ -1,1 +1,12 @@
-<p>returned-orders works!</p>
+<app-table 
+   (ModalState)="CancelPackage($event)"   
+   [Header]="Header[0].order" 
+   [TableType]="'orders'" 
+   [RowAndColumn]="RowAndColumn[0]['orders']" 
+   [Action]="Action" 
+   [ActionName]="ActionName" 
+   [ViewAction]="ViewAction"
+>
+</app-table>
+
+<app-view-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-view-package>

@@ -1,12 +1,12 @@
 <div 
-    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-5 -mt-5 justify-center items-center"
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 md:mb-5 -mt-2 md:-mt-5 justify-center items-center"
 >
     <div 
        class="col-span-12 md:col-span-1 py-2"
     >
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" 
            class="w-6 h-6 hover:fill-current cursor-pointer hover:fill-red-900"
-           (click)="ModalState = 'create-package'"
+           (click)="ModalState = 'create-order'"
        >
           <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
        </svg>                                            
@@ -50,7 +50,20 @@
               *ngIf="page === 0"
               class="overflow-x-auto"
             >
-               <app-table (ModalState)="CancelPackage($event)"   [Header]="Header[0].order" [TableType]="'orders'" [RowAndColumn]="RowAndColumn[0]['orders']" [Action]="Action" [ActionName]="ActionName" [ViewAction]="ViewAction"></app-table>
+               <app-open-orders></app-open-orders>
+            </div>
+            <div 
+              *ngIf="page === 1"
+              class="overflow-x-auto"
+            >
+               <app-pending-orders></app-pending-orders>
+            </div>
+            <div 
+              *ngIf="page === 2"
+              class="overflow-x-auto"
+            >
+               
+               <app-returned-orders></app-returned-orders>
             </div>
           </div>
 
@@ -61,12 +74,5 @@
     </section>
 </div>
 
-<app-availability [ModalState]="ModalState" (FromPackage)="CheckPackageAvailability($event)"></app-availability>
-
-<app-cancel-order [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-cancel-order>
 
 <app-create-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-create-package>
-
-<app-view-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-view-package>
-
-<app-update-package [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-update-package>

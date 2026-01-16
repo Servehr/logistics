@@ -41,7 +41,9 @@ export const IsCheckBoxChecked = (control: AbstractControl): ValidationErrors | 
 
 export const IsSelectionMake = (control: AbstractControl): ValidationErrors | null => 
 {
+  // console.log(typeof control.value)
     return control.value?.length === 0 || control.value === null ? { selectionRequired : 'selectionRequired' } :  null
+    // return control.value === "-1" ? { selectionRequired : 'selectionRequired' } :  null
 }
 
 export const CheckNote = (control: AbstractControl): ValidationErrors | null => 
@@ -162,6 +164,10 @@ export class LoginComponent implements OnInit {
                 this.store.dispatch(SetLoadingStatus({ loading: false }))
                 this.router.navigate(['/overview'])
             }
+            
+            this.store.dispatch(SetLoadingStatus({ loading: false }))
+            this.message = "Invalid username or password"
+            this.store.dispatch(SetErrorMessage({ msg: this.message, statusCode: 400, operation: "authenticate-user"  }))
             //  const email = UserDetail['email']!
             //  const password = UserDetail['password']! 
 

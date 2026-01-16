@@ -31,6 +31,7 @@ export class TextAreaComponent implements ControlValueAccessor
     
    control: FormControl | any;
    @Input() disabled: boolean = false;
+   @Input() msgg: string = '';
   
    private _onChange: (value: any) => void = () => {}
  

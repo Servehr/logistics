@@ -20,7 +20,7 @@ export class ReportsComponent
     phoneNumber:string = ''
     email:string = ''
 
-    TabPages: string[] = ["General Report", "Sales Analysis", "Product Ranking"]
+    TabPages: string[] = ["Product Supplies", "Sales Analysis", "Product Ranking"]
     page: number = 0
 
     maritalStatus:any[] = [

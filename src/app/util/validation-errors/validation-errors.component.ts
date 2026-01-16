@@ -11,7 +11,11 @@ export class ValidationErrorsComponent<T> extends ControlValueAccessorDirective<
    
     @Input() errors: Record<string, ValidationErrors> | null = { };
 
-    @Input() errorMessages: Record<string, string> =  {  }
+   //  @Input() errorMessages: Record<string, string> =  {  }
+
+   @Input() errorMessages: Record<string, string> = {
+        isNoted: 'Leave a message for me'
+    }
     
     @Input() customErrorMessages: Record<string, string> = { }
 

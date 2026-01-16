@@ -1,11 +1,10 @@
-            <div 
-                class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-5 -mt-5 justify-center items-center"
+<div 
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 md:mb-5 -mt-2 md:-mt-5 justify-center items-center"
             >
                 <div 
                     class="col-span-12 md:col-span-8"
                 >
-                    <!-- <app-input-box [type]="fieldType" [name]="fieldName" [id]="fieldId" [placeholder]="fieldPlaceHolder"></app-input-box> -->
-                     <app-search></app-search> 
+                    <app-search></app-search> 
                 </div>
                 <div 
                     class="col-span-12 md:col-span-4"
@@ -45,7 +44,19 @@
                                     *ngIf="page === 0"
                                     class="overflow-x-auto"
                                 >
-                                    <app-table (ModalState)="ViewOrderReport($event)" [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ActionName]="'report'" [ViewAction]="ViewAction"></app-table>
+                                    <app-general-report></app-general-report>
+                                </div>
+                                <div 
+                                    *ngIf="page === 1"
+                                    class="overflow-x-auto"
+                                >
+                                    <app-sales-report></app-sales-report>
+                                </div>
+                                <div 
+                                    *ngIf="page === 2"
+                                    class="overflow-x-auto"
+                                >
+                                    <app-ranking-report></app-ranking-report>
                                 </div>
                             </div>
 
@@ -55,5 +66,3 @@
                     </div>
                 </section>
             </div>
-
-<app-view-report [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-view-report>

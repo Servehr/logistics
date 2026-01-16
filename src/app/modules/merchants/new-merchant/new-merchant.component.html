@@ -16,7 +16,7 @@
             class="md:flex"
         >
             <div 
-                class="md:w-1/2 px-3 mb-3"
+                class="md:w-full px-3"
             >
                 <app-label [for]="'Company'"></app-label>
                 <input-field
@@ -31,14 +31,30 @@
                 >
                 </input-field>
             </div>
-            <div 
-                class="md:w-1/2 px-3 mb-3"
+            <!-- <div 
+                class="md:w-1/2 px-3"
             >
                 <app-label [for]="'Country'"></app-label>
                 <select-option formControlName="country" [options]="countries" [title]="'- Select a Country -'"> </select-option>
-            </div>
+            </div> -->
         </div>
         <div 
+            class="md:flex"
+        >
+            <div 
+                class="md:w-full px-3"
+            >
+                <app-label [for]="'State'"></app-label>
+                <select-option 
+                    formControlName="states" 
+                    [options]="stateOfOrigin" 
+                    [title]="'- Select State -'"
+                    [customError]="errorMessages"
+                > 
+                </select-option>
+            </div>
+        </div>
+        <!-- <div 
             class="md:flex"
         >
             <div 
@@ -53,7 +69,20 @@
                 <app-label [for]="'Category'"></app-label>
                 <select-option formControlName="category" [options]="categories" [title]="'- Select Category -'"> </select-option>
             </div>
-        </div>
+        </div> -->
+        <div 
+            class="md:w-2/2 mx-3 mb-5 md:mb-5"
+        >
+            <app-label [for]="'About'"></app-label>
+            <text-area  
+                placeholder="About company"
+                [rows]="rows"
+                formControlName="about"
+                [customError]="errorMessages"
+                [msgg]="'The staff address'"
+            >
+            </text-area>
+       </div>
         <div 
             class="md:w-2/2 mx-3 mb-5 md:mb-5"
         >
@@ -61,7 +90,9 @@
             <text-area  
                 placeholder="Leave a message"
                 [rows]="rows"
-                formControlName="note"
+                formControlName="address"
+                [customError]="errorMessages"
+                [msgg]="'The user address'"
             >
             </text-area>
        </div>
@@ -86,11 +117,26 @@
                 <div 
                     class="flex col-span-6 justify-end"
                 >
-                    <button 
+                    <!-- <button 
+                        *ngIf="!showLoading"
                         class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
                     >
                         Submit
-                    </button>
+                    </button> -->
+
+                    <div>
+                        <buttonn 
+                        (sendData)="NewMerchant()"
+                        >
+                        <!-- <app-spinner *ngIf="showLoading"></app-spinner> -->
+                        <div 
+                            class="flex flex-col space-y-1 items-center justify-between" 
+                        >
+                            <h3>Create</h3>
+                        </div>
+                        </buttonn>
+                    </div>
+
                 </div>                
             </div>
         </div>      

@@ -8,11 +8,9 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class OpenOrdersComponent {
 
-    title: string = 'RachamHub - Merchants'
-    TableTitle: string = 'Open Orders'
-    status: string = 'Successful'
-    message:string = 'Post Sucessfully Sent'
-    colorStatus:string = ''
+    title: string = 'RachamHub - Open Orders'
+    ModalState: string = ''
+    @Input() ActionName: string = 'open-orders'
 
     firstName:string = ''
     surName:string = ''
@@ -64,10 +62,6 @@ export class OpenOrdersComponent {
     ]
 
     @Input() labelName: string = ''
-
-    @Input() switchStatus:boolean = true
-    @Input() switchState: string = 'flex w-20 h-10 m-10 rounded-full transition-all duration-500 bg-red-400 cursor-pointer'
-    @Input() switchingState: string = 'h-10 w-10 rounded-full transition-all duration-500 ml-0 bg-red-900 border-10'
 
     @Input() Header: any[] = [
       {
@@ -214,32 +208,19 @@ export class OpenOrdersComponent {
         console.log(event.target.value)
     }
 
-    changeStatus = (event: any) => 
-    {
-      this.switchStatus = event.switchStatus
-      this.switchState = event.switchState
-      this.switchingState = event.switchingState
-    }
-
     theChangeOption = (option: string) => {
       this.orderStatus = option
       console.log(`orderStatus - ${this.orderStatus}`)
     }
 
-    alertCode = (color: string) => 
+    CancelPackage(event: any)
     {
-        switch (color) {
-          case 'error':            
-            this.colorStatus = 'relative py-3 pl-4 pr-10 leading-normal text-white bg-red-600 rounded-lg mt-10'
-            break;
-          case 'success':
-            this.colorStatus = 'relative py-3 pl-4 pr-10 leading-normal text-white bg-green-800 rounded-lg mt-10'        
-            break;
-          default:
-            this.colorStatus = 'relative py-3 pl-4 pr-10 leading-normal text-white bg-purple-200 rounded-lg mt-10'
-            break;
-        }
-        return this.colorStatus
+       this.ModalState = event
+    }
+
+    CheckPackageAvailability(event: any)
+    {
+       this.ModalState = event
     }
 
 }

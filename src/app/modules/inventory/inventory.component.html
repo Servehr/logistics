@@ -1,6 +1,6 @@
 <div 
-                class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-5 -mt-5 justify-center items-center"
-            >
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 md:mb-5 -mt-2 md:-mt-5 justify-center items-center"
+>
                 <div 
                     class="col-span-12 md:col-span-1 py-2"
                 >
@@ -50,10 +50,16 @@
                                *ngIf="page === 0"
                                class="overflow-x-auto"
                             >
+                                <app-new-stock></app-new-stock>
+                            </div>
+                            <div 
+                               *ngIf="page === 1"
+                               class="overflow-x-auto"
+                            >
                                 <div 
                                     class="overflow-x-auto"
                                 >
-                                    <app-table (ModalState)="CloseCurrentModal($event)"  [Header]="Header" [TableType]="'orders'" [RowAndColumn]="RowAndColumn" [Action]="Action" [Availability]="Availability" [ActionName]="ActionName" [ViewAction]="ViewAction"></app-table>
+                                    <app-stock-approval></app-stock-approval>
                                 </div>
                             </div>
 
@@ -64,13 +70,3 @@
                 </section>
             </div>
             
-
-<app-new-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-new-stock>
-
-<app-update-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-update-stock>
-
-<app-re-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-re-stock>
-
-<app-stock-history [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-stock-history>
-
-<app-remove-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-remove-stock>

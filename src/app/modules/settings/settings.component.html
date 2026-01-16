@@ -1,107 +1,78 @@
 <div 
-                class="grid md:grid-cols-12 grid-cols-1 gap-5 mb-5 justify-center items-center"
-            >
-                <section 
-                    class="col-span-12 justify-center antialiased text-gray-600 py-2 md:px-2"
+    class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200 px-1 md:px-3"
+>
+    <header 
+        class="py-2 border-b border-gray-100 pt-5"
+    >
+        <h3 
+          class="font-semibold text-gray-800 font-bold pl-5"
+        >
+           {{pageTitle}}
+        </h3>
+    </header>
+    <div 
+        class="overflow-x-auto"
+    >
+        <div 
+          class="container m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 py-3 px-2 md:px-5 pb-5 mb-7 pt-1"
+        >   
+           <!-- This is for static resource  -->
+           <!-- <app-dynamic-tab-wrapper [dynamicComponents]="components"></app-dynamic-tab-wrapper> -->
+           <!-- This is for dynanic resource -->
+           <!-- <div 
+             class="container m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 p-5"
+           >   
+           </div> -->
+           <div 
+              class="d-flex md:flex  w-full h-full gap-0 md:gap-3"
+           >
+             <label 
+               class="py-0 static md:hidden"
+             >
+               <h3 
+                 class="text-sm text-center bg-slate-300 py-4 font-bold uppercase" 
+                 style="background-color: rgb(238, 217, 217)"
+               >
+                 {{  'All Resources under level'  }}
+               </h3>
+             </label>
+
+             <div 
+               class="d-flex md:block md:w-3/12 border-y-2 bg-gray-200 min-h-[6rem] h-fit max-h-[40rem] overflow-y-scroll shadow-md bg-white mt-1"
+             >
+                <label 
+                  class="py-0 static hidden md:block"
                 >
-                    <div 
-                        class="h-full"
-                    >
-                        <div 
-                            class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
-                        >
-                            <header 
-                                class="px-5 py-4 border-b border-gray-100 pt-5"
-                            >
-                                <h3 
-                                    class="font-semibold text-gray-800 font-bold ml-5"
-                                >
-                                    {{pageTitle}}
-                                </h3>
-                            </header>
-                            <div 
-                                class="px-3 py-1"
-                            >
-                                <div 
-                                  class="container overflow-x-auto m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 py-3 px-5 pb-5 mb-7 pt-5"
-                                >   
-                                    <!-- This is for static resource  -->
-                                    <!-- <app-dynamic-tab-wrapper [dynamicComponents]="components"></app-dynamic-tab-wrapper> -->
-
-                                    <!-- This is for dynanic resource -->
-                                    <!-- <div 
-                                        class="container m-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 p-5"
-                                    >   
-
-                                    </div> -->
-                                   <div 
-                                      class="flex w-full h-full mt-2 gap-3"
-                                   >
-                                      <div 
-                                        class="flex flex-col w-3/12 border-y-2 bg-gray-200 min-h-[10rem] h-fit max-h-[40rem] overflow-y-scroll shadow-md bg-white mt-1"
-                                      >
-                                        <label 
-                                           class="py-0 static"
-                                        >
-                                           <h3 
-                                              class="text-sm text-center bg-slate-300 py-4 font-bold uppercase" 
-                                              style="background-color: rgb(238, 217, 217)"
-                                           >
-                                               {{  'All Resources under level'  }}
-                                           </h3>
-                                        </label>
-                                        <div 
-                                           class='d-flex bg-gray-20'
-                                        >
-                                           <div 
-                                              *ngFor="let resource of resources; let i = index"
-                                              class="rounded-none hover:bg-red-200 py-5 pl-7 px-0 m-auto w-full text-left font-semibold transition-colors cursor-pointer duration-300 text-sm"
-                                              [ngClass]="'border-y-2 border-gray-200'"
-                                              (click)="ControlPage(resource)"
-                                              style="font-size: 12; padding-top: 15;"
-                                           >
-                                              {{ resource.name }}
-                                           </div>
-                                           <!-- {      
-                                             resourceAction.map((tab: { id: number, name: string }, idx: number) => {
-                                             return (
-                                                <div
-                                                  key={idx}
-                                                  class={`rounded-none py-5 pl-7 px-0 m-auto w-full text-left font-semibold transition-colors cursor-pointer duration-300 text-sm ${
-                                                  idx === activeTabIndex
-                                                  ? "border-pink-200 bg-BGColor text-white"
-                                                  : "border-y-2 border-gray-200 hover:border-TopPersonal hover:text-HoverColor"
-                                                }`}
-                                                style={{fontSize:"12px", paddingTop: '15px' }}
-                                                // Change the active tab on click. #2678bf
-                                                onClick={
-                                                  () => {
-                                                    setResource(tab?.id)
-                                                    setResourceName(tab?.name)
-                                                    setActiveTabIndex(idx)
-                                                  }
-                                                }
-                                              >
-                                                {tab?.name?.toUpperCase()}
-                                              </div>
-                                            );
-                                          })
-                                         }  -->
-                                           </div>                  
-                                        </div>
-
-                                        <div 
-                                           class="w-9/12 px-0 flex flex-col bg-white h-[40rem] overflow-y-scroll"
-                                        >
-                                            <app-setting-control [resource]="resource" [role]="role"></app-setting-control>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                    </div>
-                </section>
+                   <h3 
+                     class="text-sm text-center bg-slate-300 py-4 font-bold uppercase" 
+                     style="background-color: rgb(238, 217, 217)"
+                   >
+                     {{  'All Resources under level'  }}
+                   </h3>
+                </label>
+                <div 
+                  class='md:flex-col flex bg-gray-20 w-[500px] md:w-full min-h-1 h-fit pt-2 md:pb-5 bg-white'
+                >
+                  <div 
+                    *ngFor="let resource of resources; let i = index"
+                    class="rounded-none hover:bg-red-200 py-5 pl-2 md:pl-5 px-0 m-auto w-full text-left font-semibold transition-colors cursor-pointer duration-300 text-sm"
+                    [ngClass]="'border-y-2 text-center'"
+                    (click)="ControlPage(resource)"
+                    style="font-size: 12; padding-top: 15;"
+                  >
+                    {{ resource.name }}
+                  </div>
+                </div>                  
             </div>
+
+            <div 
+              class="w-full md:w-9/12 px-0 flex flex-col bg-white h-[40rem] overflow-y-scroll mt-6 md:mt-0"
+            >
+               <app-setting-control [resource]="resource" [role]="role"></app-setting-control>
+            </div>
+          </div>
+
+       </div>
+    </div>
+
+</div>

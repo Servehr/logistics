@@ -10,6 +10,8 @@ import { TextAreaComponent } from 'src/app/components/controls/text-area/text-ar
 export class TextAreaValidationErrorsComponent extends TextAreaComponent implements OnChanges {
    
     @Input() errors: Record<string, ValidationErrors> | null = { };
+    
+   @Input() msg: string = '';
 
     @Input() errorMessages: Record<string, string> = {
         isNoted: 'Leave a message'
@@ -24,9 +26,11 @@ export class TextAreaValidationErrorsComponent extends TextAreaComponent impleme
        {
           this.errorMessages = 
           {
-             ...this.errorMessages, ...customErrorMessages.currentValue
+            //  ...this.errorMessages, ...customErrorMessages.currentValue
+            //  ...this.errorMessages, this.msg
           }
        }  
+       console.log(this.errorMessages)
     }
 
 }

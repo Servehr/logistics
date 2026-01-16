@@ -16,7 +16,7 @@ export class PackagesComponent {
 
     modalStatus: boolean = false
 
-    TabPages: string[] = ["All", "Open", "Pending", "Returned"]
+    TabPages: string[] = ["Open", "Pending", "Returned"]
     page: number = 0
 
     maritalStatus:any[] = [
@@ -161,11 +161,6 @@ export class PackagesComponent {
     isOpenOrClose()
     {
        this.modalStatus = !this.modalStatus
-    }
-
-    CheckPackageAvailability(event: any)
-    {
-       this.ModalState = event
     }
 
     CancelPackage(event: any)

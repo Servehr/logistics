@@ -33,5 +33,8 @@ body {
     /* background-color: rgb(37 99 235 / var(--tw-bg-opacity)); */
   }
 
-
   /* scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 */
+
+  .minHeight {
+     min-height: 4px;
+  }

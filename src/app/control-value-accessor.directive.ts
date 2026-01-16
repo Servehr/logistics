@@ -59,7 +59,7 @@ export class ControlValueAccessorDirective<T> implements ControlValueAccessor, O
              distinctUntilChanged(),
              tap((val) => fn(val))
           ).subscribe(() => {
-            this.control?.markAsUntouched()
+            // this.control?.markAsUntouched()
           })
     }
 

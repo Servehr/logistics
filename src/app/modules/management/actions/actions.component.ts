@@ -23,7 +23,9 @@ export class ActionsComponent
     resources:any[] = [
       { id: 1, name:'Merchant' },
       { id: 2, name:'Staff' },
-      { id: 3, name:'Transactions' }
+      { id: 3, name:'Transactions' },
+      { id: 4, name:'Leave' },
+      { id: 5, name:'Profile' }
     ] 
 
     roleForm: FormGroup;    

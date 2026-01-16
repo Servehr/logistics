@@ -2,11 +2,13 @@
 
 </div> -->
 <div 
-    class="flex h-screen justify-center items-center bg-TrasParentBG px-2 md:p-0"
+    class="flex h-screen justify-center items-center bg-TrasParentBG px-2 md:p-0 relative"
+    (click)="CloseCurrentModal()"
 >
     <div 
-        class="flex flex-col shadow-md bg-white rounded flex flex-col"
+        class="flex flex-col shadow-md bg-white rounded flex flex-col z-50 absolute"
         [ngClass]="wideTall"
+        (click)="doNotClose($event)"
     >            
         <div 
             class="flex w-full pl-1 bg-blue-100 -mt-3 flex-start"

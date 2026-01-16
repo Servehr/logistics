@@ -26,7 +26,7 @@ export class TableComponent {
     @Input() TableType: string = ''
     @Input() SubViewAction: boolean = false
     @Input() Availability: boolean = false
-    @Input() ActionName: string = 'create-package'
+    @Input() ActionName: string = ''
     @Input() Shelve: boolean = false
     @Output() userToUpdate: EventEmitter<number> = new EventEmitter()
     @Output() ModalState: EventEmitter<string> = new EventEmitter()
@@ -62,17 +62,17 @@ export class TableComponent {
 
     CheckAvailability()
     {
-       this.ModalState.emit('package-availability')
+       this.ModalState.emit('order-availability')
     }
 
     CancelPackage()
     {
-       this.ModalState.emit('cancel-package')
+       this.ModalState.emit('order-package')
     }
 
     UpdatePackage(column: any, i: any)
     {
-       this.ModalState.emit('update-package')
+       this.ModalState.emit('order-package')
     }
 
     ShelveRoom()
@@ -111,7 +111,7 @@ export class TableComponent {
        this.ModalState.emit('view-staff')       
     }
 
-    ViewOn(action: string)
+    ViewOn(column: any, i: any, action: string)
     {
        this.ModalState.emit(action)       
     }
@@ -122,6 +122,11 @@ export class TableComponent {
     }
 
     Remove(column: any, i: any, action: string)
+    {
+       this.ModalState.emit(action)       
+    }
+
+    emitOut(column: any, i: any, action: string)
     {
        this.ModalState.emit(action)       
     }

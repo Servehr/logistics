@@ -9,7 +9,7 @@ export class ManagementComponent {
 
     title: string = 'System Management'
 
-    TabPages: string[] = ["Categories", "Department", "Role", "Resources", "Actions"]
+    TabPages: string[] = ["Location", "Categories", "Department", "Role", "Resources", "Actions"]
     page: number = 0
 
     @Input() fieldId: string = 'search-merchant'

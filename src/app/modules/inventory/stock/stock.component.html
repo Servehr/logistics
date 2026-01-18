@@ -1,0 +1,19 @@
+<app-table 
+    (ModalState)="CloseCurrentModal($event)"  
+    [Header]="Header" 
+    [TableType]="'orders'" 
+    [RowAndColumn]="RowAndColumn" 
+    [Action]="Action" 
+    [Availability]="Availability" 
+    [ActionName]="ActionName" 
+    [ViewAction]="ViewAction"
+>
+</app-table>
+
+<app-update-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-update-stock>
+
+<app-re-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-re-stock>
+
+<app-stock-history [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-stock-history>
+
+<app-remove-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-remove-stock>

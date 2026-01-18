@@ -10,6 +10,7 @@ import { PasswordRequiredAndLength } from 'src/app/auth/login/login.component';
 export class PlaceProductOnShelveComponent {
 
   title: string = 'Place product on shelve'
+  rows: number = 2
 
   Location: any = [
       { id: '1', name:'Lagos' },
@@ -20,12 +21,25 @@ export class PlaceProductOnShelveComponent {
 
   placeProduct: FormGroup;
   
+  errorMessages = 
+  { 
+    CompanyNameRequired: 'Enter Company Name', 
+    selectionRequired: 'Make selection',
+    CompanyLocationRequired: 'Select State', 
+    isNoted: 'Enter Detail'
+    // isNoted: { msg: 'Enter Detail' }
+  }
+  
   constructor() 
   { 
       this.placeProduct = new FormGroup(
       {
         state: new FormControl('', [Validators.required]),
         location: new FormControl('', [Validators.required]),
+        address: new FormControl('', [Validators.required]),
+        customerName: new FormControl('', [Validators.required]),
+        product: new FormControl('', [Validators.required]),
+        quantity: new FormControl('', [Validators.required]),
       }
     )
   }   

@@ -67,7 +67,34 @@ import { InventoryStockApprovalComponent } from './inventory/inventory-stock-app
 import { CategoriesComponent } from './management/categories/categories.component';
 import { DepartmentsComponent } from './management/departments/departments.component';
 import { RolesComponent } from './management/roles/roles.component';
-import { RexourcesComponent } from './management/rexources/rexources.component';
+import { AuthorizationComponent } from './management/authorization/authorization.component';
+import { ActionComponent } from './management/authorization/action/action.component';
+import { RexourceComponent } from './management/authorization/rexource/rexource.component';
+import { PageComponent } from './management/authorization/page/page.component';
+import { NewCategoryComponent } from './management/categories/new-category/new-category.component';
+import { RemoveCategoryComponent } from './management/categories/remove-category/remove-category.component';
+import { UpdateCategoryComponent } from './management/categories/update-category/update-category.component';
+import { NewDepartmentComponent } from './management/departments/new-department/new-department.component';
+import { UpdateDepartmentComponent } from './management/departments/update-department/update-department.component';
+import { RemoveDepartmentComponent } from './management/departments/remove-department/remove-department.component';
+import { RemoveRoleComponent } from './management/roles/remove-role/remove-role.component';
+import { NewRoleComponent } from './management/roles/new-role/new-role.component';
+import { UpdateRoleComponent } from './management/roles/update-role/update-role.component';
+
+import { UpdateActionComponent } from './management/authorization/page/update-action/update-action.component';
+import { RemoveActionComponent } from './management/authorization/page/remove-action/remove-action.component';
+import { LinkUnlinkActionComponent } from './management/authorization/action/link-unlink-action/link-unlink-action.component';
+import { RemoveRexourceComponent } from './management/authorization/rexource/remove-rexource/remove-rexource.component';
+import { NewRexourceComponent } from './management/authorization/rexource/new-rexource/new-rexource.component';
+import { UpdateRexourceComponent } from './management/authorization/rexource/update-rexource/update-rexource.component';
+
+import { AddActionToPageComponent } from './management/authorization/page/add-action-to-page/add-action-to-page.component';
+import { UpdatePageComponent } from './management/authorization/page/update-page/update-page.component';
+import { RemovePageComponent } from './management/authorization/page/remove-page/remove-page.component';
+import { ConnectPageToRexourceComponent } from './management/authorization/page/connect-page-to-rexource/connect-page-to-rexource.component';
+import { DisconnectPageFromRexourceComponent } from './management/authorization/page/disconnect-page-from-rexource/disconnect-page-from-rexource.component';
+import { PageActionsComponent } from './management/authorization/page/page-actions/page-actions.component';
+import { StockComponent } from './inventory/stock/stock.component';
 
 
 @NgModule({
@@ -121,13 +148,19 @@ import { RexourcesComponent } from './management/rexources/rexources.component';
     PlaceProductOnShelveComponent,
 
     ManagementComponent,
+    RexourceComponent,
+    PageComponent,
     ActionsComponent,
+
     CategoriesComponent,
+    NewCategoryComponent,
+
     DepartmentsComponent,
     RolesComponent,
-    RexourcesComponent,
+    AuthorizationComponent,
 
     InventoryComponent,
+    StockComponent,
     NewStockComponent,
     UpdateStockComponent,
     ReStockComponent,
@@ -156,6 +189,33 @@ import { RexourcesComponent } from './management/rexources/rexources.component';
     NotificationsComponent,
     
     FooterComponent,
+    AuthorizationComponent,
+    ActionComponent,
+    ActionComponent,
+    RexourceComponent,
+    PageComponent,
+    RemoveCategoryComponent,
+    UpdateCategoryComponent,
+    NewDepartmentComponent,
+    UpdateDepartmentComponent,
+    RemoveDepartmentComponent,
+    RemoveRoleComponent,
+    NewRoleComponent,
+    UpdateRoleComponent,
+    UpdateActionComponent,
+    RemoveActionComponent,
+    LinkUnlinkActionComponent,
+    RemoveRexourceComponent,
+    NewRexourceComponent,
+    UpdateRexourceComponent,
+    
+    AddActionToPageComponent,
+    UpdatePageComponent,
+    RemovePageComponent,
+    ConnectPageToRexourceComponent,
+    DisconnectPageFromRexourceComponent,
+    PageActionsComponent,
+    StockComponent
   ],
   imports: [
     ModuleRoutingModule,

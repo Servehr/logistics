@@ -1,4 +1,167 @@
 <div 
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 justify-center items-center -mt-10 -mb-5"
+>
+    <section 
+        class="col-span-12 justify-center antialiased text-gray-600 py-2"
+    >
+       <div 
+          class="h-full"
+       >
+             <!-- class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200" -->
+           <div 
+             class="w-full mx-auto"
+           >
+              <header 
+                class="border-b border-gray-100 flex justify-start space-x-10"
+              >
+                <h1 
+                  class="font-bold text-red-600 text-lg font-bold mt-2"
+                >
+                  {{title}}
+                </h1>                                
+                <span
+                  class="p-3"
+                > 
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:fill-current cursor-pointer hover:fill-red-900" (click)="OpenAndClose()"
+                    >
+                       <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
+                   </svg> 
+                </span>
+               </header>
+           </div>
+
+        </div>
+    </section>
+</div>
+
+<div 
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 justify-center items-center"
+>
+    <section 
+        class="col-span-12 justify-center antialiased text-gray-600 py-2"
+    >
+        <form 
+           [formGroup]="orderSelection"
+           class="flex flex-col space-y-5"
+        >
+            <div 
+            class="md:flex"
+            >
+            <div 
+                class="md:w-6/12 px-3 mb-3"
+            >
+                <!-- <app-label [for]="'State'"></app-label> -->
+                <select-option formControlName="state" [options]="Location" [title]="'- Select State -'"> </select-option>
+            </div>
+            <div 
+                class="md:w-6/12 px-3 mb-3"
+            >
+                <!-- <app-label [for]="'Location'"></app-label> -->
+                <select-option formControlName="location" [options]="Location" [title]="'- Select Location -'"> </select-option>
+            </div>
+            </div>
+        </form>
+    </section>
+</div>
+
+
+<div 
+  class="grid md:grid-cols-12 grid-cols-6 gap-5 md:p-3 mt-2 mb-5 justify-center items-center p-1"
+>
+
+        <ng-container 
+          *ngFor="let summary of summaries"
+        >
+          <div 
+            class="col-span-3 bg-white hover:bg-red-50"
+          >
+             <div 
+                 class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg"
+             >
+                 <div 
+                     class="flex items-start justify-between"
+                     (click)="call()"
+                 >
+                     <div 
+                         class="flex flex-col space-y-2"
+                     >
+                         <span 
+                             class="text-md"
+                         >
+                             {{summary?.name}}
+                         </span>
+                         <span 
+                             class="text-md text-blue-800 font-semibold"
+                         >
+                             {{summary?.state}}
+                         </span>
+                     </div>
+                     <div 
+                        (click)="callMe()"
+                        class="p-2 rounded-md bg-blue-800 cursor-pointer z-5 text-sm font-bold text-white" 
+                        *ngIf="box === 'true'"
+                     >
+                       Pick
+                     </div>
+                 </div>
+                 
+                 <div 
+                    class="flex flex-row col-span-12 justify-start items-center text-center mt-2"
+                >
+                  <p>{{ summary?.lga }}</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="green" class="size-4 ml-5 mt-1 cursor-pointer">
+                    <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                    <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                  </svg>
+
+                </div>
+                 <div 
+                    class="flex flex-row col-span-12 justify-start text-center mt-2"
+                >
+                   <div 
+                      class="col-span-6 w-full inline-block text-[sm] text-black bg-green-00 rounded text-left"
+                   >
+                     <span 
+                        class="text-[10px] text-red-500 lowercase"
+                    >
+                        Qty: 
+                    </span>
+                    <span 
+                        class="text-[14px] ml-1 mt-3"
+                    >
+                        {{ summary?.qty }}
+                    </span>
+                    </div>
+                   <span 
+                     class="col-span-6 w-full text-sm text-red-800 text-right"
+                   >
+                     <span 
+                        class="text-[10px] text-red-500 lowercase"
+                    >
+                        placed on: 
+                    </span>
+                    <span 
+                        class="text-[15px] ml-1 mt-3 text-red-800 font-semibold"
+                    >
+                        {{ summary?.date }}
+                    </span>
+                   </span>
+                </div>
+             </div>
+          </div>
+        </ng-container>
+
+</div>   
+
+
+<div 
+   class="w-full mx-auto py-5"
+>
+   <app-pagination></app-pagination>
+</div>
+
+
+<!-- <div 
     class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 md:mb-5 -mt-2 md:-mt-5 justify-center items-center"
             >
                 <section 
@@ -42,7 +205,7 @@
 
                     </div>
                 </section>
-            </div>
+            </div> -->
 
 <app-order-shelve-location [ModalState]="ModalState" (FromPackage)="CancelPackage($event)"></app-order-shelve-location>
 

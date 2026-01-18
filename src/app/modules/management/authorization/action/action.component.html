@@ -1,17 +1,17 @@
 <div 
-    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 md:mb-5 -mt-2 md:-mt-5 justify-center items-center"
+    class="grid md:grid-cols-12 grid-cols-12 md:p-3 -mt-2 md:-mt-8 justify-center items-center"
             >
                 <section 
-                    class="col-span-12 justify-center antialiased text-gray-600 py-4 md:px-2"
+                    class="col-span-12 justify-center antialiased text-gray-600 py-2"
                 >
                     <div 
                         class="h-full"
                     >
                         <div 
-                            class="w-full mx-auto bg-white py-5"
+                            class="w-full mx-auto bg-white py-2"
                         >
                             <header 
-                                class="px-1 py-1 border-b border-gray-100"
+                                class="px-1 py-1 border-b border-gray-100 mx-3"
                             >
                                 <h1 
                                     class="font-bold text-gray-400 text-sm font-bold"
@@ -36,5 +36,5 @@
             </div>
 
 
-
+<app-link-unlink-action [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-link-unlink-action>
 

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RexourcesComponent } from './rexources.component';
+import { RexourceComponent } from './rexource.component';
 
-describe('RexourcesComponent', () => {
-  let component: RexourcesComponent;
-  let fixture: ComponentFixture<RexourcesComponent>;
+describe('RexourceComponent', () => {
+  let component: RexourceComponent;
+  let fixture: ComponentFixture<RexourceComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RexourcesComponent]
+      declarations: [RexourceComponent]
     });
-    fixture = TestBed.createComponent(RexourcesComponent);
+    fixture = TestBed.createComponent(RexourceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

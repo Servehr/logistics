@@ -50,7 +50,7 @@
                                *ngIf="page === 0"
                                class="overflow-x-auto"
                             >
-                                <app-new-stock></app-new-stock>
+                                <app-stock></app-stock>
                             </div>
                             <div 
                                *ngIf="page === 1"
@@ -70,3 +70,4 @@
                 </section>
             </div>
             
+<app-new-stock [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-new-stock>

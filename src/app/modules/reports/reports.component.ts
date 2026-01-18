@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 
 export class ReportsComponent 
 {
-    title: string = 'RachamHub - Report'
+    title: string = 'Report'
     status: string = 'Successful'
     message:string = 'Post Sucessfully Sent'
     colorStatus:string = ''

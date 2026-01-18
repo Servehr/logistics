@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +10,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ShelvesComponent { 
   
   title: string = 'Shelves'
-  
+
+  @Input() box:string = 'true'  
   @Input() ModalState: string = ''
   @Output() FromPackage: EventEmitter<string> = new EventEmitter()
   @Input() labelName: string = ''
@@ -38,6 +40,37 @@ export class ShelvesComponent {
         { states: 'Lagos',  availableOrders: 120, status: '', actions: ''}
       ]
   }]
+  
+  @Input() summaries: { 'name': string, 'state': string, 'lga': string, 'qty': number, date: string }[] = [ 
+     { 'name': 'Emmanuel Adebayo', 'state': 'Ogun', 'lga': 'Lagos Island', qty: 12, date: '2011' },
+     { 'name': 'Christopher Ugochukwu Nnamdi', 'state': 'Lagos', 'lga': 'Apapa', qty: 4, date: '2014'  },
+     { 'name': 'CSA', 'state': 'Ogun', 'lga': 'Ifako Ijaye', qty: 6, date: '2015'  },
+     { 'name': 'Riders Manager', 'state': 'Lagos', 'lga': 'Amuwo Odofin', qty: 1, date: '2011'  },
+     { 'name': 'Whare House Manager', 'state': 'Lagos', 'lga': 'Badagry', qty: 7, date: '2010'  },
+     { 'name': 'Merchants', 'state': 'Kwara', 'lga': 'Iyana Iba', qty: 14, date: '2023'  },
+     { 'name': 'Riders', 'state': 'Edo', 'lga': 'Victoria Island', qty: 2, date: '2026'  },
+     { 'name': 'Accountant', 'state': 'Lagos', 'lga': 'Ojo', qty: 12, date: '2030'  }
+  ]
+
+  Location: any = [
+      { id: '1', name:'Lagos' },
+      { id: '2', name:'Ogun' },
+      { id: '3', name:'Edo' },
+      { id: '4', name:'Calabar' }
+  ]
+
+  
+  orderSelection: FormGroup;
+    
+  constructor() 
+  { 
+     this.orderSelection = new FormGroup(
+     {
+       state: new FormControl('', [Validators.required]),
+       location: new FormControl('', [Validators.required])
+     }
+    )
+  }
 
   sendData()
   {
@@ -60,6 +93,16 @@ export class ShelvesComponent {
   CheckShelveOrderLocation(event: any)
   {
      this.ModalState = event
+  }
+
+  call()
+  {
+     alert("Great")
+  }
+
+  callMe()
+  {
+     alert("Triumph")
   }
   
 

@@ -1,0 +1,57 @@
+<div 
+    class="grid md:grid-cols-12 grid-cols-12 md:p-3 -mt-2 -mt-8 justify-center items-center z-50"
+            >
+                <section 
+                    class="col-span-12 justify-center antialiased text-gray-600 py-2"
+                >
+                    <div 
+                        class="h-full"
+                    >
+                        <div 
+                            class="w-full bg-white pb-3 -mt-3"
+                        >
+                            <header 
+                                class="flex justify-between items-center py-2 mb-2 mt-2 border-b border-gray-100"
+                            >
+                                <h1 
+                                    class="font-bold text-gray-400 text-sm font-bold md:ml-3"
+                                >
+                                    {{title}}
+                                </h1>
+                                <div 
+                                    class="col-span-12 md:col-span-1 py-2 mr-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:fill-current cursor-pointer hover:fill-red-900" 
+                                        (click)="ModalState = 'new-rexource'"
+                                    >
+                                        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
+                                    </svg>                                            
+                                </div>
+                            </header>
+                            <div 
+                                class="p-3 -mt-5"
+                            >
+                              <app-table (ModalState)="CloseCurrentModal($event)"  [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ActionName]="ActionName" [ViewAction]="ViewAction"></app-table>
+                            </div>
+
+                        </div>
+
+                    </div>                    
+                </section>
+            </div>
+
+<app-new-rexource [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-new-rexource>
+
+<app-update-rexource [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-update-rexource>
+
+<app-remove-rexource [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-remove-rexource>
+
+
+
+
+
+
+
+
+
+

@@ -38,34 +38,39 @@
                              *ngIf="page === 0"
                              class="overflow-x-auto"
                             >
-                              <app-categories></app-categories>
+                              <h1>Great</h1>
                             </div>
-
 
                             <div 
                              *ngIf="page === 1"
                              class="overflow-x-auto"
                             >
-                              <app-departments></app-departments>
+                              <app-categories></app-categories>
                             </div>
-
 
                             <div 
                              *ngIf="page === 2"
                              class="overflow-x-auto"
                             >
-                              <app-roles></app-roles>
+                              <app-departments></app-departments>
                             </div>
 
                             <div 
                              *ngIf="page === 3"
                              class="overflow-x-auto"
                             >
-                              <app-rexources></app-rexources>
+                              <app-roles></app-roles>
+                            </div>
+
+                            <div 
+                             *ngIf="page === 4"
+                             class="overflow-x-auto"
+                            >
+                              <app-authorization></app-authorization>
                             </div>
                             
                             <div 
-                             *ngIf="page === 4"
+                             *ngIf="page === 5"
                              class="overflow-x-auto"
                             >
                               <app-actions></app-actions>

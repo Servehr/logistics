@@ -8,9 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TransactionsComponent {
 
-    title: string = 'RachamHub - Transactions'
-    status: string = 'Successful'
-    message:string = 'Post Sucessfully Sent'
+    title: string = 'Transactions'
     colorStatus:string = ''
     reason:string = ''
     ModalState: string = ''

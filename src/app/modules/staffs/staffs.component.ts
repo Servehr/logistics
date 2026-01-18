@@ -17,7 +17,7 @@ import { getPageLinks } from 'src/app/state/selector/paginate.selector';
 })
 export class StaffsComponent implements OnInit { 
 
-    title: string = 'RachamHub - Staffs'
+    title: string = 'Staffs'
     message:string = ''
     colorStatus:string = ''
     show:string = 'false'

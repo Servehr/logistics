@@ -26,7 +26,7 @@ export class TableComponent {
     @Input() TableType: string = ''
     @Input() SubViewAction: boolean = false
     @Input() Availability: boolean = false
-    @Input() ActionName: string = ''
+    @Input() ActionName: string = 'rexource'
     @Input() Shelve: boolean = false
     @Output() userToUpdate: EventEmitter<number> = new EventEmitter()
     @Output() ModalState: EventEmitter<string> = new EventEmitter()

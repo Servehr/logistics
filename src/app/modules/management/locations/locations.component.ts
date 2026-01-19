@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LocationsComponent 
 {
-    pageTitle:string = 'User Management'
+    pageTitle:string = 'Location'
     page: number = -1
     level: string = 'Management'
 
@@ -21,9 +21,9 @@ export class LocationsComponent
     ] 
     resource: {  id: number, name: string } = { id: -1, name: "" }
     resources:any[] = [
-      { id: 1, name:'Resource' },
-      { id: 2, name:'Pages' },
-      { id: 3, name:'Actions' }
+      { id: 1, name:'Country' },
+      { id: 2, name:'States' },
+      { id: 3, name:'LGA' }
     ] 
 
     roleForm: FormGroup;    

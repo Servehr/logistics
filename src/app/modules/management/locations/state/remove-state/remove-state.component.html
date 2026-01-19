@@ -1,0 +1,44 @@
+<app-dialog 
+    *ngIf="ModalState === 'remove-state'"
+    [title]="title"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+    [wideTall]="'w-12/12 md:w-4/12 -mt-60'"
+>
+    <div 
+        class="w-full flex justify-center items-center px-5 mb-1 mt-2 mb-7"
+    >
+        <h1 
+            class="text-black text-lg font-bold"
+        >
+            Kindly confirm state removal
+        </h1>
+    </div>
+    <div 
+        class="grid grid-cols-12 gap-6 mb-10"
+    >
+        <div class="col-span-3"></div>
+        <div 
+            class="flex col-span-3 justify-end"
+        >
+           <buttonn 
+             (click)="sendData()" 
+             [type]="'bg-red-500 py-3 w-32 text-sm whitespace-nowrap flex-shrink hover:bg-red-800 hover:text-white text-gray-300 font-semibold px-2 border border-red-600 rounded-lg shadow'"
+           >
+               Cancel
+           </buttonn>
+        </div>  
+        <div 
+           class="col-span-3"
+        >
+           <buttonn
+             (sendData)="sendData()"
+             [type]="'bg-green-500 py-3 w-32 text-sm whitespace-nowrap flex-shrink hover:bg-green-800 hover:text-white text-gray-300 font-semibold px-2 border border-green-600 rounded-lg shadow'"
+           >
+             Remove
+          </buttonn>
+
+        </div>    
+        <div class="col-span-3"></div>           
+    </div>
+</app-dialog>

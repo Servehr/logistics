@@ -22,13 +22,23 @@
                     class="md:w-6/12 px-3 mb-3"
                 >
                     <app-label [for]="'State'"></app-label>
-                    <select-option formControlName="state" [options]="Location" [title]="'- Select State -'"> </select-option>
+                    <select-option 
+                        formControlName="state" 
+                        [options]="Location" 
+                        [title]="'- Select State -'"
+                    >
+                    </select-option>
                 </div>
                 <div 
                     class="md:w-6/12 px-3 mb-3"
                 >
                     <app-label [for]="'Location'"></app-label>
-                    <select-option formControlName="location" [options]="Location" [title]="'- Select Location -'"> </select-option>
+                    <select-option 
+                        formControlName="location" 
+                        [options]="Location" 
+                        [title]="'- Select Location -'"
+                    > 
+                    </select-option>
                 </div>
             </div>
 
@@ -68,33 +78,44 @@
                 class="w-full px-2 mb-3 flex"
             >
                 <div 
-                    class="w-full md:w-6/12 px-2 mb-3"
+                    class="md:w-4/12 px-3 mb-3"
                 >
-                    <app-label [for]="'Product'"></app-label>
+                    <app-label [for]="'Shelve'"></app-label>
+                    <select-option 
+                        formControlName="shelve" 
+                        [options]="shelves" 
+                        [title]="'- Select Shelve -'"
+                    > 
+                    </select-option>
+                </div>
+                <div 
+                    class="w-full md:w-4/12 px-2 mb-3"
+                >
+                    <app-label [for]="'Row'"></app-label>
                     <input-field
-                        [id]="'product'"
-                        #product
-                        [name]="'product'"
-                        [placeholder]="'Enter product'"
-                        [type]="'number'"
+                        [id]="'row'"
+                        #row
+                        [name]="'row'"
+                        [placeholder]="'Enter row'"
+                        [type]="'text'"
                         [value]="''"
-                        formControlName="product"
+                        formControlName="row"
                         [customErrorMessages]="errorMessages"
                     >
                     </input-field>
                 </div>
                 <div 
-                    class="w-full md:w-6/12 px-2 mb-3"
+                    class="w-full md:w-4/12 px-2 mb-3"
                 >
-                    <app-label [for]="'Quantity'"></app-label>
+                    <app-label [for]="'Box Number'"></app-label>
                     <input-field
-                        [id]="'quantity'"
-                        #quantity
-                        [name]="'quantity'"
-                        [placeholder]="'Enter quantity'"
-                        [type]="'number'"
+                        [id]="'boxNumber'"
+                        #boxNumber
+                        [name]="'boxNumber'"
+                        [placeholder]="'Enter boxNumber'"
+                        [type]="'text'"
                         [value]="''"
-                        formControlName="quantity"
+                        formControlName="boxNumber"
                         [customErrorMessages]="errorMessages"
                     >
                     </input-field>

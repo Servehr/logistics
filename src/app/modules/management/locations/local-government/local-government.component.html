@@ -1,0 +1,105 @@
+<div 
+    class="grid md:grid-cols-12 grid-cols-12 gap-5 md:p-3 mb-10 -mt-14 justify-center items-center"
+            >
+                <section 
+                    class="col-span-12 justify-center antialiased text-gray-600 py-4 md:px-2"
+                >
+                    <div 
+                        class="h-full"
+                    >
+                        <div 
+                            class="w-full mx-auto bg-white py-5 mt-4"
+                        >
+                            <section 
+                                class="flex justify-between items-center py-1 border-b border-gray-100 grid grid-cols-12"
+                            >
+                                <div 
+                                   class="ml-3 md:ml-5 font-bold text-gray-400 text-sm font-bold md:ml-3 col-span-1 md:col-span-1"
+                                >
+                                    {{title}}
+                                </div>
+
+                                <div 
+                                  class="col-span-5 md:col-span-5 ml-2"
+                                >
+                                  <form 
+                                    [formGroup]="newLGA"
+                                    class="flex flex-col space-y-5"
+                                  >
+                                    <div 
+                                        class="md:flex"
+                                    >
+                                      <div 
+                                        class="md:w-full px-3"
+                                      >
+                                         <select-option 
+                                           formControlName="country" 
+                                           [options]="stateOfOrigin" 
+                                           [title]="'- Select Country -'"
+                                           [customError]="errorMessages"
+                                         > 
+                                         </select-option>
+                                       </div>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                <div 
+                                  class="col-span-5 md:col-span-5"
+                                >
+                                  <form 
+                                    [formGroup]="newLGA"
+                                    class="flex flex-col space-y-5"
+                                  >
+                                    <div 
+                                        class="md:flex"
+                                    >
+                                      <div 
+                                        class="md:w-full px-3"
+                                      >
+                                         <select-option 
+                                           formControlName="states" 
+                                           [options]="stateOfOrigin" 
+                                           [title]="'- Select State -'"
+                                           [customError]="errorMessages"
+                                         > 
+                                         </select-option>
+                                       </div>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                <div 
+                                    class="col-span-1 md:col-span-1 py-2 mr-2 flex justify-end"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:fill-current cursor-pointer hover:fill-red-900" 
+                                        (click)="ModalState = 'new-local-government'"
+                                    >
+                                        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
+                                    </svg>                                            
+                                </div>
+                            </section>
+                            <div 
+                                class="p-3"
+                            >
+                                <div 
+                                    class="overflow-x-auto"
+                                >
+                                    <app-table (ModalState)="CloseCurrentModal($event)"  [Header]="Header[0].merchant" [TableType]="'merchants'" [RowAndColumn]="RowAndColumn[0]['merchants']" [Action]="Action" [ActionName]="ActionName" [ViewAction]="ViewAction"></app-table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>                    
+                </section>
+            </div>
+
+
+<app-new-local-government [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-new-local-government>
+
+<app-update-local-government [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-update-local-government>
+
+<app-remove-local-government [ModalState]="ModalState" (FromPackage)="CloseCurrentModal($event)"></app-remove-local-government>            
+
+

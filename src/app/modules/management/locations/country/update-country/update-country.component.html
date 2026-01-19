@@ -1,0 +1,70 @@
+<app-dialog 
+    *ngIf="ModalState === 'update-country'"
+    [title]="title"
+    [wideTall]="'w-full md:w-4/12 -mt-[60px]'"
+    [isOpenOrClose]="ModalState"
+    (CloseModal)="CloseCurrentModal()"
+>
+    
+    <div 
+        class="content overflow-x-auto min-h-fit max-h-[350px] scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-red-400 hover:scrollbar-thumb-blue-400 px-10"
+    >
+      <form 
+        [formGroup]="updateCountry"
+        class="flex flex-col space-y-5"
+      >
+        <div 
+            class="-mx-3 md:flex mt-5"
+        >
+            <div 
+                class="w-full px-3 mb-3 pt-2"
+            >
+                <!-- <app-label [for]="'Firstname'"></app-label> -->
+                <input-field
+                    [id]="'countryName'"
+                    #countryName
+                    [name]="'countryName'"
+                    [placeholder]="'Enter countryName'"
+                    [type]="'text'"
+                    [value]="value"
+                    formControlName="countryName"
+                    [customErrorMessages]="errorMessages"
+                >
+                </input-field>
+            </div>
+        </div>
+
+        <div 
+            class="footer"
+        >
+            <div 
+                class="grid grid-cols-12 gap-6 mb-8 mt-3" 
+                select="footer"
+            >
+                <div 
+                    class="col-span-6"
+                >
+                <button 
+                    (click)="CloseCurrentModal()" 
+                    class="bg-red-800 hover:bg-red-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-red-600 rounded shadow"
+                >
+                    Cancel
+                </button>
+                </div> 
+                <div 
+                class="flex col-span-6 justify-end"
+                >
+                <button 
+                    (click)="CloseCurrentModal()" 
+                    class="bg-CompanyBlue hover:bg-purple-600 hover:text-white text-gray-300 font-semibold py-2 px-4 border border-purple-600 rounded shadow"
+                >
+                    Update
+                </button>
+                </div>                
+            </div>
+        </div>
+
+      </form>
+    </div> 
+    
+</app-dialog>

@@ -7,7 +7,6 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { PlacardComponent } from '../components/placard/placard.component';
-import { NotificationsComponent } from '../components/notifications/notifications.component';
 import { OverviewComponent } from './overview/overview.component';
 import { PulsateComponent } from '../components/pulsate/pulsate.component';
 import { MerchantsComponent } from './merchants/merchants.component';
@@ -95,6 +94,22 @@ import { ConnectPageToRexourceComponent } from './management/authorization/page/
 import { DisconnectPageFromRexourceComponent } from './management/authorization/page/disconnect-page-from-rexource/disconnect-page-from-rexource.component';
 import { PageActionsComponent } from './management/authorization/page/page-actions/page-actions.component';
 import { StockComponent } from './inventory/stock/stock.component';
+import { LocationsComponent } from './management/locations/locations.component';
+import { CountryComponent } from './management/locations/country/country.component';
+import { StateComponent } from './management/locations/state/state.component';
+import { LocalGovernmentComponent } from './management/locations/local-government/local-government.component';
+import { DeliveriesComponent } from './deliveries/deliveries.component';
+import { NewCountryComponent } from './management/locations/country/new-country/new-country.component';
+import { RemoveCountryComponent } from './management/locations/country/remove-country/remove-country.component';
+import { UpdateCountryComponent } from './management/locations/country/update-country/update-country.component';
+import { UpdateStateComponent } from './management/locations/state/update-state/update-state.component';
+import { NewStateComponent } from './management/locations/state/new-state/new-state.component';
+import { RemoveStateComponent } from './management/locations/state/remove-state/remove-state.component';
+import { RemoveLocalGovernmentComponent } from './management/locations/local-government/remove-local-government/remove-local-government.component';
+import { NewLocalGovernmentComponent } from './management/locations/local-government/new-local-government/new-local-government.component';
+import { UpdateLocalGovernmentComponent } from './management/locations/local-government/update-local-government/update-local-government.component';
+import { NotificationComponent } from '../components/notification/notification.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 
 @NgModule({
@@ -155,6 +170,10 @@ import { StockComponent } from './inventory/stock/stock.component';
     CategoriesComponent,
     NewCategoryComponent,
 
+    DeliveriesComponent,
+
+    LocationsComponent,
+    
     DepartmentsComponent,
     RolesComponent,
     AuthorizationComponent,
@@ -186,7 +205,7 @@ import { StockComponent } from './inventory/stock/stock.component';
     SidebarComponent,
     HeaderComponent,
     PlacardComponent,
-    NotificationsComponent,
+    NotificationComponent,
     
     FooterComponent,
     AuthorizationComponent,
@@ -215,7 +234,22 @@ import { StockComponent } from './inventory/stock/stock.component';
     ConnectPageToRexourceComponent,
     DisconnectPageFromRexourceComponent,
     PageActionsComponent,
-    StockComponent
+    StockComponent,
+    CountryComponent,
+    StateComponent,
+    LocalGovernmentComponent,
+    DeliveriesComponent,
+    NewCountryComponent,
+    RemoveCountryComponent,
+    UpdateCountryComponent,
+    UpdateStateComponent,
+    NewStateComponent,
+    RemoveStateComponent,
+    RemoveLocalGovernmentComponent,
+    NewLocalGovernmentComponent,
+    UpdateLocalGovernmentComponent,
+
+    NotificationsComponent
   ],
   imports: [
     ModuleRoutingModule,

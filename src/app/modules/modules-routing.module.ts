@@ -1,17 +1,7 @@
 
-import { EnvironmentInjector, NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-
-import { Router } from '@angular/router';
-
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModulesComponent } from './modules/modules.component';
-// import { MerchantsComponent } from './merchants/merchants.component';
-// import { NotificationsComponent } from '../components/notifications/notifications.component';
-// import { PlacardComponent } from '../components/placard/placard.component';
-// import { PulsateComponent } from '../components/pulsate/pulsate.component';
-// import { SearchComponent } from '../components/search/search.component';
 import { OverviewComponent } from './overview/overview.component';
 import { MerchantsComponent } from './merchants/merchants.component';
 import { CustomerComponent } from './customers/customer/customer.component';
@@ -25,6 +15,8 @@ import { ManagementComponent } from './management/management.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { SettingsComponent } from './settings/settings.component';
 import { RidersComponent } from './riders/riders.component';
+import { DeliveriesComponent } from './deliveries/deliveries.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
     { 
@@ -58,6 +50,9 @@ const routes: Routes = [
               'path': 'staffs', component: StaffsComponent
           },
           {
+              'path': 'deliveries', component: DeliveriesComponent
+          },
+          {
               'path': 'transactions', component: TransactionsComponent
           },
           {
@@ -69,6 +64,9 @@ const routes: Routes = [
           {
               'path': 'settings', component: SettingsComponent
           },
+          {
+              'path': 'notifications', component: NotificationsComponent
+          }
        ] 
     }
 ];

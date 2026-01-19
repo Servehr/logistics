@@ -18,6 +18,13 @@ export class PlaceProductOnShelveComponent {
       { id: '3', name:'Edo' },
       { id: '4', name:'Calabar' }
   ]
+  
+  shelves: any = [
+      { id: '1', name:'A' },
+      { id: '2', name:'B' },
+      { id: '3', name:'C' },
+      { id: '4', name:'D' }
+  ]
 
   placeProduct: FormGroup;
   
@@ -37,9 +44,10 @@ export class PlaceProductOnShelveComponent {
         state: new FormControl('', [Validators.required]),
         location: new FormControl('', [Validators.required]),
         address: new FormControl('', [Validators.required]),
+        shelve: new FormControl('', [Validators.required]),
         customerName: new FormControl('', [Validators.required]),
-        product: new FormControl('', [Validators.required]),
-        quantity: new FormControl('', [Validators.required]),
+        row: new FormControl('', [Validators.required]),
+        boxNumber: new FormControl('', [Validators.required]),
       }
     )
   }   

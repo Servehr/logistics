@@ -31,7 +31,7 @@
           [name]="'email'"
           [placeholder]="'admin@company.com'"
           [type]="'email'"
-          [value]="'admin@company.com'"
+          [value]="''"
           formControlName="email"
           [customErrorMessages]="errorMessages"
        >
@@ -47,7 +47,7 @@
           [name]="'password'"
           [placeholder]="'password'"
           [type]="'password'"
-          [value]="'password'"
+          [value]="''"
           formControlName="password"
           [customErrorMessages]="errorMessages"
         >
@@ -80,19 +80,19 @@
           class="flex justify-between"
         >
           <a 
-            [routerLink]="['/forgot']" 
+            [routerLink]="['/auth/forgot']" 
             class="text-sm text-blue-600 hover:underline focus:text-blue-800 -mt-2 mb-3"
           >
             Forgot
           </a>
           <a 
-            [routerLink]="['/register']" 
+            [routerLink]="['/auth/register']" 
             class="text-sm text-blue-600 hover:underline focus:text-blue-800 -mt-2 mb-3"
           >
             Register
           </a>
           <a 
-            [routerLink]="['/reset']" 
+            [routerLink]="['/auth/reset']" 
             class="text-sm text-blue-600 hover:underline focus:text-blue-800 -mt-2 mb-3"
           >
             Reset

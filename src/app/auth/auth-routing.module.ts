@@ -10,9 +10,9 @@ import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
     { 
-        path: 'auth', component:   AuthComponent, children: [ 
+        path: '', component:   AuthComponent, children: [ 
           {
-              'path': 'login', component: LoginComponent
+              'path': '', component: LoginComponent
           },
           {
               'path': 'forgot', component: ForgotComponent

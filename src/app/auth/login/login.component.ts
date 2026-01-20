@@ -67,7 +67,8 @@ export class LoginComponent implements OnInit {
     message:string = ''
     colorStatus:string = ''
     show:string = 'false'
-    value:string = ''
+    value:string = 'admin@company.com'
+    password: string = ''
     disabled!: boolean
 
     name!: string
